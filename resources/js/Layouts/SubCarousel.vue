@@ -46,7 +46,7 @@ const asset = computed(() => usePage().props.value.asset);
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(33, 37, 41, 0.6);
+  background: rgba(33, 37, 41, 0.7);
   z-index: 1;
   /* transform: skewY(-3deg); */
 }
@@ -63,7 +63,7 @@ const asset = computed(() => usePage().props.value.asset);
   margin-bottom: 2rem;
   font-family: "Heebo", sans-serif;
   font-weight: 700;
-  color: rgb(251 146 60);
+  color: #ff9005;
   text-shadow: 1px 2px 4px rgb(0 0 0 / 90%);
 }
 </style>

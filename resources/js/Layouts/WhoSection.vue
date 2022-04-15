@@ -1,7 +1,7 @@
 <template>
   <section class="main-mission-section">
     <div class="mission-section">
-      <div class="container">
+      <div class="container" data-aos="fade-up">
         <div class="row align-items-center">
           <div
             class="
@@ -9,10 +9,10 @@
               text-left
               order-sm-1 order-xl-12 order-lg-12
             "
+            data-aos="fade-up"
+            data-aos-delay="100"
           >
-            <div class="main-title">
-              <h3 class="text-orange-400 py-1 px-3 mb-3">Who We Are</h3>
-            </div>
+            <MainTitle title="Who We Are"></MainTitle>
 
             <p>
               Sydani Group is a global systems integrator (GSI) and managed IT
@@ -27,44 +27,44 @@
               <h3>Core Values</h3>
               <li>
                 <a href="#">
-                  <i class="bi bi-circle-fill"></i>
+                  <i class="bi bi-check-all"></i>
                   &ensp; Business application management
                 </a>
               </li>
               <li>
                 <a href="#">
-                  <i class="bi bi-circle-fill"></i>
+                  <i class="bi bi-check-all"></i>
                   &ensp; Custom software product development
                 </a>
               </li>
               <li>
                 <a href="#">
-                  <i class="bi bi-circle-fill"></i>
+                  <i class="bi bi-check-all"></i>
                   &ensp; Data insights, business intelligence, artificial
                   intelligence and big data
                 </a>
               </li>
               <li>
                 <a href="#">
-                  <i class="bi bi-circle-fill"></i>
+                  <i class="bi bi-check-all"></i>
                   &ensp; Workforce productivity apps, development and management
                 </a>
               </li>
               <li>
                 <a href="#">
-                  <i class="bi bi-circle-fill"></i>
+                  <i class="bi bi-check-all"></i>
                   &ensp; Cloud migration, integration, expansion and security
                 </a>
               </li>
               <li>
                 <a href="#">
-                  <i class="bi bi-circle-fill"></i>
+                  <i class="bi bi-check-all"></i>
                   &ensp; Cyber security and end point management
                 </a>
               </li>
               <li>
                 <a href="#">
-                  <i class="bi bi-circle-fill"></i>
+                  <i class="bi bi-check-all"></i>
                   &ensp; IT infrastructure optimizations
                 </a>
               </li>
@@ -87,8 +87,9 @@
 </template>
 
 <script setup>
-const { usePage } = require("@inertiajs/inertia-vue3");
-const { computed } = require("@vue/runtime-core");
+import { usePage } from "@inertiajs/inertia-vue3";
+import { computed } from "@vue/runtime-core";
+import MainTitle from "./MainTitle.vue";
 
 const asset = computed(() => usePage().props.value.asset);
 </script>
@@ -96,13 +97,5 @@ const asset = computed(() => usePage().props.value.asset);
 <style scoped>
 .main-mission-section {
   background: #ececec;
-}
-.main-title {
-  border-left: 4px solid rgb(251 146 60);
-}
-.main-title h3 {
-  font-size: 30px;
-  font-weight: 700;
-  font-family: "Heebo", sans-serif;
 }
 </style>

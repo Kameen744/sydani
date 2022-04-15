@@ -5,7 +5,6 @@ import { createInertiaApp } from '@inertiajs/inertia-vue3';
 import { InertiaProgress } from '@inertiajs/progress';
 
 const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Sydani';
-
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,
     resolve: (name) => import(`./Pages/${name}.vue`),
@@ -17,4 +16,4 @@ createInertiaApp({
     },
 });
 
-InertiaProgress.init({ color: '#4B5563' });
+InertiaProgress.init({ color: 'darkblue' });

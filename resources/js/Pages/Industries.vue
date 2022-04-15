@@ -1,4 +1,5 @@
 <template>
+  <Loader></Loader>
   <Head>
     <title>{{ $page.props.page }}</title>
   </Head>
@@ -27,4 +28,5 @@ import SubCarousel from "./../Layouts/SubCarousel.vue";
 import AboutIndustry from "./../Layouts/AboutIndustry.vue";
 import SubPageServices from "./../Layouts/SubPageServices.vue";
 import SubPageInsight from "./../Layouts/SubPageInsight.vue";
+import Loader from "./../Layouts/Loader.vue";
 </script>

@@ -13,12 +13,6 @@ use App\Http\Controllers\Auth\EmailVerificationNotificationController;
 
 Route::middleware('guest')->group(function () {
 
-    Route::get('/', [PageController::class, 'welcome']);
-    Route::get('/about', [PageController::class, 'about']);
-    Route::get('/industries/{name}', [PageController::class, 'industries']);
-    Route::get('/ourwork',  [PageController::class, 'ourwork']);
-    Route::get('/projects', [PageController::class, 'projects']);
-
     // Route::get('register', [RegisteredUserController::class, 'create'])
     //             ->name('register');
 

@@ -8,6 +8,11 @@ class AdminController extends Controller
 {
     public function dashboard()
     {
-        return Inertia::render('User/Dashboard');
+        return Inertia::render('Index');
+    }
+
+
+    public function fake_image_upload(Request $request) {
+        dd($request->image);
     }
 }

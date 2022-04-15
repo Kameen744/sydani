@@ -10,9 +10,7 @@
               order-sm-1 order-xl-12 order-lg-12
             "
           >
-            <div class="main-title">
-              <h3 class="text-orange-400 py-1 px-3 mb-3">Our Vision</h3>
-            </div>
+            <MainTitle title="Our Vision"></MainTitle>
 
             <p>
               Lorem ipsum dolor sit amet consectetur, adipisicing elit.
@@ -23,9 +21,7 @@
             </p>
             <hr />
 
-            <div class="main-title">
-              <h3 class="text-orange-400 py-1 px-3 mb-3">Our Mission</h3>
-            </div>
+            <MainTitle title="Our Mission"></MainTitle>
 
             <p>
               Lorem ipsum dolor sit amet consectetur, adipisicing elit.
@@ -63,22 +59,10 @@
 </template>
 
 <script setup>
-const { usePage } = require("@inertiajs/inertia-vue3");
-const { computed } = require("@vue/runtime-core");
+import { usePage } from "@inertiajs/inertia-vue3";
+import { computed } from "@vue/runtime-core";
+import MainTitle from "./MainTitle.vue";
 
 const asset = computed(() => usePage().props.value.asset);
 </script>
 
-<style scoped>
-/* .main-mission-section {
-  background: #ececec;
-} */
-.main-title {
-  border-left: 4px solid rgb(251 146 60);
-}
-.main-title h3 {
-  font-size: 30px;
-  font-weight: 700;
-  font-family: "Heebo", sans-serif;
-}
-</style>

@@ -11,13 +11,27 @@ const mix = require('laravel-mix');
  |
  */
 
+//  mix.js('resources/js/app.js', 'public/js')
+//     .vue()
+//     .postCss('resources/css/app.css', 'public/css', [
+//         require('postcss-import'),
+//         require('tailwindcss'),
+//         require('autoprefixer'),
+//     ]).options({
+//         processCssUrls: true,
+//     })
+//     .webpackConfig(require('./webpack.config'));
+
 mix.js('resources/js/app.js', 'public/js')
     .vue()
-    .postCss('resources/css/app.css', 'public/css', [
-        require('postcss-import'),
-        require('tailwindcss'),
-        require('autoprefixer'),
-    ]).options({
+    .postCss('resources/css/app.css', 'public/css').options({
+        processCssUrls: true,
+    })
+    .webpackConfig(require('./webpack.config'));
+
+mix.js('resources/js/dashboard.js', 'public/js')
+    .vue()
+    .postCss('resources/css/dashboard.css', 'public/css').options({
         processCssUrls: true,
     })
     .webpackConfig(require('./webpack.config'));

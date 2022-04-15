@@ -1,5 +1,5 @@
 <template>
-  <section id="faq" class="faq">
+  <section id="insight" class="faq pb-4">
     <div class="container" data-aos="fade-up">
       <SectionTitle :title="`${$page.props.page} Insight`"></SectionTitle>
       <div class="row">

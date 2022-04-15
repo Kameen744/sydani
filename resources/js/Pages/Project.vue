@@ -133,7 +133,7 @@ import { Head } from "@inertiajs/inertia-vue3";
   background: #ececec;
 }
 .main-title {
-  border-left: 4px solid rgb(251 146 60);
+  border-left: 4px solid #ff9005;
 }
 .main-title h3 {
   font-size: 30px;

@@ -88,6 +88,6 @@ import SectionTitle from "./../Components/SectionTitle.vue";
 .demand-card:hover {
   background: rgba(251, 146, 60, 0.7);
   color: black;
-  transition: background ease-in 1s;
+  transition: background ease-in 10ms;
 }
 </style>

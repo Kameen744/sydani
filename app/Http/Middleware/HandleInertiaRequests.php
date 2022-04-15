@@ -35,6 +35,7 @@ class HandleInertiaRequests extends Middleware
     {
         $asset = \asset('sydani');
         $dashAsset = asset('dashboard');
+
         $auth = [
             'user' => $request->user(),
         ];
