@@ -21,7 +21,7 @@ defineProps({
   label: { type: String },
   modelValue: { type: String },
   classes: { type: String },
-  type: { type: String },
+  type: { type: String, default: "text" },
   error: { type: [Boolean, String], default: false },
 });
 </script>

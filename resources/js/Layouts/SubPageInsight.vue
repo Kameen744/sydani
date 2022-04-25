@@ -1,7 +1,9 @@
 <template>
   <section id="insight" class="faq pb-4">
     <div class="container" data-aos="fade-up">
-      <SectionTitle :title="`${$page.props.page} Insight`"></SectionTitle>
+      <SectionTitle
+        :title="`${$page.props.industry.name} Insight`"
+      ></SectionTitle>
       <div class="row">
         <div class="col-lg-4 col-md-6 col-sm-6 col-12 mb-4 mb-xl-0">
           <div class="sub-insight">

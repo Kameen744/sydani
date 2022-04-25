@@ -9,37 +9,17 @@
               text-left
               order-sm-1 order-xl-12 order-lg-12
             "
+            data-aos="fade-up"
+            data-aos-delay="100"
           >
             <MainTitle title="Our Vision"></MainTitle>
 
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Repellat, repudiandae quae quasi error, fugit obcaecati quia
-              dignissimos quidem soluta pariatur quod illum nisi sunt eaque non,
-              voluptatum voluptatibus mollitia doloremque? Lorem, ipsum dolor
-              sit amet consectetur adipisicing elit.
-            </p>
+            <p v-html="$page.props.vision.vision"></p>
             <hr />
 
             <MainTitle title="Our Mission"></MainTitle>
 
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Repellat, repudiandae quae quasi error, fugit obcaecati quia
-              dignissimos quidem soluta pariatur quod illum nisi sunt eaque non,
-              voluptatum voluptatibus mollitia doloremque? Lorem, ipsum dolor
-              sit amet consectetur adipisicing elit.
-            </p>
-
-            <ul>
-              <li>
-                <a href="#">
-                  <i class="bi bi-circle-fill"></i>
-                  &ensp; Lorem ipsum dolor sit amet consectetur adipisicing
-                  elit.
-                </a>
-              </li>
-            </ul>
+            <p v-html="$page.props.vision.mission"></p>
           </div>
 
           <div
@@ -49,8 +29,13 @@
               order-sm-12 order-xl-1 order-lg-1
               mt-xl-0 mt-lg-0 mt-md-5 mt-sm-5 mt-5
             "
+            data-aos="fade-up"
+            data-aos-delay="300"
           >
-            <img :src="`${asset}/assets/img/mission.jpg`" class="img-fluid" />
+            <img
+              :src="`${asset}/assets/img/visionmission/${$page.props.vision.image}`"
+              class="img-fluid"
+            />
           </div>
         </div>
       </div>

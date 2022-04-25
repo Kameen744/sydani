@@ -1,12 +1,9 @@
 <template>
   <li
     class="menu-item"
-    :class="
-      active ? 'open active' : $page.url == data.path ? 'open active' : ''
-    "
-    @click.prevent="active = !active"
+    :class="active == data.activeKey ? 'open active' : ''"
+    @click.prevent="toggleNavLink()"
   >
-    <!-- menu-item-animating menu-item-closing -->
     <a href="" class="menu-link menu-toggle">
       <i class="menu-icon tf-icons bx bx-layout"></i>
       {{ data.title }}
@@ -17,7 +14,7 @@
         class="menu-item"
         v-for="(navLink, key) in data.links"
         :key="key"
-        :class="$page.url == `/admin/${navLink.url}` ? 'active' : ''"
+        :class="$page.url == `${navLink.url}` ? 'active' : ''"
       >
         <Link :href="navLink.url" class="menu-link">{{ navLink.link }}</Link>
       </li>
@@ -26,30 +23,25 @@
 </template>
 
 <script setup>
-import { Link, usePage, useRemember } from "@inertiajs/inertia-vue3";
+import { Link, usePage } from "@inertiajs/inertia-vue3";
+import { useStore } from "vuex";
 import { useState, useActions } from "vuex-composition-helpers/dist";
-const { ref } = require("@vue/reactivity");
-const { onMounted } = require("@vue/runtime-core");
+const { onMounted, computed } = require("@vue/runtime-core");
 
-defineProps({
+const props = defineProps({
   data: { type: Object },
 });
-// const toggleNavbar = (e) => {
-//   e.target.parentElement.classList.toggle("open");
-//   e.target.parentElement.classList.toggle("active");
-//   //   //   e.target.classList.toggle("open");
-//   //   //   e.target.classList.toggle("active");
-// };
-const active = ref(false);
-// const rmData = useRemember({ currentUrl: "" }, `${Math.random(1, 999)}`);
 
-// const { currentUrl } = useState(["currentUrl"]);
-// const { setCurrentUrl } = useActions(["setCurrentUrl"]);
+const store = useStore();
+
+const active = computed(() => store.state.activeNavLink);
+const toggleNavLink = () =>
+  store.commit("setActiveNavLink", props.data.activeKey);
 
 onMounted(() => {
-  //   let url = window.location.href.split("/").reverse().slice(0, 2).reverse();
-  //   currUrl.value = `/${url[0]}/${url[1]}`;
-  //   console.log(currUrl.value);
+  usePage().url.value == `/admin/dashboard`
+    ? store.commit("setActiveNavLink", -1)
+    : "";
 });
 </script>
 <style scoped>

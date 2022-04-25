@@ -2,7 +2,7 @@
   <section id="services" class="about section-bg">
     <div class="container" data-aos="fade-up">
       <SectionTitle
-        :title="`${$page.props.page} Services`"
+        :title="`${$page.props.industry.name} Services`"
         subtitle="Necessitatibus eius consequatur ex
           aliquid fuga eum quidem. Sit sint consectetur velit."
       ></SectionTitle>
@@ -10,9 +10,9 @@
         <div class="content col-xl-5 d-flex align-items-stretch">
           <div class="card">
             <img
-              :src="`${$page.props.asset}/assets/img/tabs-1.jpg`"
+              :src="`${$page.props.asset}/assets/img/industries/${$page.props.industry.service_image}`"
               class="card-img-top"
-              alt="..."
+              :alt="$page.props.industry.slug"
             />
           </div>
         </div>
@@ -20,51 +20,16 @@
           <div class="icon-boxes d-flex flex-column justify-content-center">
             <div class="row">
               <div
+                v-for="(service, key) in $page.props.services"
+                :key="key"
                 class="col-md-6 icon-box"
                 data-aos="fade-up"
-                data-aos-delay="100"
+                :data-aos-delay="key * 100"
               >
                 <i class="bx bx-receipt"></i>
-                <h4>Corporis voluptates sit</h4>
+                <h4>{{ service.title }}</h4>
                 <p>
-                  Consequuntur sunt aut quasi enim aliquam quae harum pariatur
-                  laboris nisi ut aliquip
-                </p>
-              </div>
-              <div
-                class="col-md-6 icon-box"
-                data-aos="fade-up"
-                data-aos-delay="200"
-              >
-                <i class="bx bx-cube-alt"></i>
-                <h4>Ullamco laboris nisi</h4>
-                <p>
-                  Excepteur sint occaecat cupidatat non proident, sunt in culpa
-                  qui officia deserunt
-                </p>
-              </div>
-              <div
-                class="col-md-6 icon-box"
-                data-aos="fade-up"
-                data-aos-delay="300"
-              >
-                <i class="bx bx-images"></i>
-                <h4>Labore consequatur</h4>
-                <p>
-                  Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut
-                  maiores omnis facere
-                </p>
-              </div>
-              <div
-                class="col-md-6 icon-box"
-                data-aos="fade-up"
-                data-aos-delay="400"
-              >
-                <i class="bx bx-shield"></i>
-                <h4>Beatae veritatis</h4>
-                <p>
-                  Expedita veritatis consequuntur nihil tempore laudantium vitae
-                  denat pacta
+                  {{ service.content.substring(0, 80) }}
                 </p>
               </div>
             </div>

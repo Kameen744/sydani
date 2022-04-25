@@ -5,67 +5,23 @@
       <div class="row no-gutters">
         <div class="content col-xl-5 d-flex align-items-stretch">
           <div class="content">
-            <h3>Voluptatem dignissimos provident quasi</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis
-              aute irure dolor in reprehenderit
-            </p>
-            <a href="#" class="about-btn"
-              ><span>About us</span> <i class="bx bx-chevron-right"></i
-            ></a>
+            <h3>{{ $page.props.systems[0].title }}</h3>
+            <p v-html="$page.props.systems[0].content.substring(0, 400)"></p>
           </div>
         </div>
         <div class="col-xl-7 d-flex align-items-stretch">
           <div class="icon-boxes d-flex flex-column justify-content-center">
             <div class="row">
               <div
+                v-for="(system, key) in $page.props.systems"
+                :key="key"
                 class="col-md-6 icon-box"
                 data-aos="fade-up"
                 data-aos-delay="100"
               >
                 <i class="bx bx-receipt"></i>
-                <h4>Corporis voluptates sit</h4>
-                <p>
-                  Consequuntur sunt aut quasi enim aliquam quae harum pariatur
-                  laboris nisi ut aliquip
-                </p>
-              </div>
-              <div
-                class="col-md-6 icon-box"
-                data-aos="fade-up"
-                data-aos-delay="200"
-              >
-                <i class="bx bx-cube-alt"></i>
-                <h4>Ullamco laboris nisi</h4>
-                <p>
-                  Excepteur sint occaecat cupidatat non proident, sunt in culpa
-                  qui officia deserunt
-                </p>
-              </div>
-              <div
-                class="col-md-6 icon-box"
-                data-aos="fade-up"
-                data-aos-delay="300"
-              >
-                <i class="bx bx-images"></i>
-                <h4>Labore consequatur</h4>
-                <p>
-                  Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut
-                  maiores omnis facere
-                </p>
-              </div>
-              <div
-                class="col-md-6 icon-box"
-                data-aos="fade-up"
-                data-aos-delay="400"
-              >
-                <i class="bx bx-shield"></i>
-                <h4>Beatae veritatis</h4>
-                <p>
-                  Expedita veritatis consequuntur nihil tempore laudantium vitae
-                  denat pacta
-                </p>
+                <h4>{{ system.title }}</h4>
+                <p v-html="system.content.substring(0, 200)"></p>
               </div>
             </div>
           </div>

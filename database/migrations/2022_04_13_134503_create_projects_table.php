@@ -18,7 +18,9 @@ return new class extends Migration
             $table->text('title');
             $table->text('background');
             $table->longText('content');
-            $table->string('image');
+            $table->string('industry');
+            $table->string('slug');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

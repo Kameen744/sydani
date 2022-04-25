@@ -7,7 +7,11 @@
         >
       </h1> -->
       <!-- Uncomment below if you prefer to use an image logo -->
-      <Link href="/" class="logo position-absolute mr-auto">
+      <Link
+        href="/"
+        class="logo position-absolute mr-auto"
+        aria-label="link to Home Page"
+      >
         <img
           :src="`${asset}/assets/img/logo.svg`"
           class="img-fluid"
@@ -20,70 +24,139 @@
         :class="mobileMode ? 'navbar-mobile' : ''"
       >
         <ul v-if="type == 'Home'">
-          <li><Link class="nav-link scrollto" href="/">Home</Link></li>
-          <li><Link class="nav-link scrollto" href="/about">About Us</Link></li>
+          <li>
+            <Link
+              class="nav-link scrollto"
+              href="/"
+              aria-label="Link to Home page"
+              >Home</Link
+            >
+          </li>
+          <li>
+            <Link
+              class="nav-link scrollto"
+              href="/about"
+              aria-label="Go To About Us Page"
+              >About Us</Link
+            >
+          </li>
 
           <li class="dropdown">
-            <a href="/" @click.prevent="navExp"
+            <a href="/" @click.prevent="navExp" aria-label="Goto Home Page"
               ><span>Industries</span> <i class="bi bi-chevron-down"></i
             ></a>
             <ul>
-              <li class="dropdown">
-                <Link class="nav-link scrollto" href="industries/healthcare">
-                  <span>Health Care</span> <i class="bi bi-chevron-right"></i>
+              <li
+                class="dropdown"
+                v-for="(industry, key) in $page.props.industries"
+                :key="key"
+              >
+                <Link
+                  class="nav-link scrollto"
+                  :href="`industries/${industry.slug}`"
+                  aria-label="Link to Industries Page"
+                >
+                  <span>{{ industry.name }}</span>
+                  <i class="bi bi-chevron-right"></i>
                 </Link>
                 <ul>
                   <li>
                     <Link
                       class="nav-link scrollto"
-                      href="industries/healthcare#services"
+                      :href="`industries/${industry.slug}#services`"
+                      aria-label="Link to Industry services page"
                       >Services</Link
                     >
                   </li>
                   <li>
                     <Link
                       class="nav-link scrollto"
-                      href="industries/healthcare#insight"
+                      :href="`industries/${industry.slug}#insight`"
+                      aria-label="Link to industry insight page"
                       >Our Insight</Link
                     >
                   </li>
                   <li>
-                    <Link class="nav-link scrollto" href="/contact"
+                    <Link
+                      class="nav-link scrollto"
+                      href="/contact"
+                      aria-label="link to Contact us page"
                       >Contact</Link
                     >
                   </li>
                 </ul>
               </li>
-              <li><a href="#">Energy</a></li>
+              <!-- <li><a href="#">Energy</a></li>
               <li><a href="#">Education</a></li>
               <li><a href="#">Agriculture</a></li>
               <li><a href="#">Climate Change</a></li>
-              <li><a href="#">Human Capital Dev</a></li>
+              <li><a href="#">Human Capital Dev</a></li> -->
             </ul>
           </li>
           <li>
-            <Link class="nav-link scrollto" href="/ourwork">Our Work</Link>
+            <Link
+              class="nav-link scrollto"
+              href="/ourwork"
+              aria-label="link to Our Work page"
+              >Our Work</Link
+            >
           </li>
           <li>
-            <Link class="nav-link scrollto" href="/projects">Projects</Link>
+            <Link
+              class="nav-link scrollto"
+              href="/projects"
+              aria-label="link to Projects page"
+              >Projects</Link
+            >
           </li>
-          <li><Link class="nav-link scrollto" href="/career">Career</Link></li>
           <li>
-            <Link class="nav-link scrollto" href="/contact">Contact</Link>
+            <Link
+              class="nav-link scrollto"
+              href="/career"
+              aria-label="link to Career page"
+              >Career</Link
+            >
           </li>
           <li>
-            <a class="nav-link scrollto" href="https://gip.test" target="_blank"
+            <Link
+              class="nav-link scrollto"
+              href="/contact"
+              aria-label="Link to Contact us page"
+              >Contact</Link
+            >
+          </li>
+          <li>
+            <a
+              class="nav-link scrollto"
+              href="https://gip.test"
+              aria-label="Link to graduate iternship page"
+              target="_blank"
               >SGIP</a
             >
           </li>
-          <li><Link class="nav-link scrollto" href="/blog">Blog</Link></li>
+          <li>
+            <Link
+              class="nav-link scrollto"
+              href="/blog"
+              aria-label="Link to Blogpost page"
+              >Blog</Link
+            >
+          </li>
         </ul>
         <ul v-else>
-          <li><Link class="nav-link scrollto" href="/">Home</Link></li>
+          <li>
+            <Link
+              class="nav-link scrollto"
+              href="/"
+              aria-label="link to Home page"
+              >Home</Link
+            >
+          </li>
           <li>
             <Link
               class="nav-link scrollto"
               :href="`/industries/${$page.props.page}#services`"
+              aria-label="Link to Industry Services page"
               >Services</Link
             >
           </li>
@@ -91,11 +164,17 @@
             <Link
               class="nav-link scrollto"
               :href="`/industries/${$page.props.page}#insight`"
+              aria-label="link to Industry Insight page"
               >Our Insight</Link
             >
           </li>
           <li>
-            <Link class="nav-link scrollto" href="/contact">Contact</Link>
+            <Link
+              class="nav-link scrollto"
+              href="/contact"
+              aria-label="link to Contact Us page"
+              >Contact</Link
+            >
           </li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle" @click="toggleMobile"></i>

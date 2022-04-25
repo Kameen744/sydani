@@ -9,18 +9,23 @@
           quisquam cupiditate. Et nemo qui impedit suscipit alias ea."
       ></SectionTitle>
       <ul class="nav nav-tabs row d-flex">
-        <li class="nav-item col-3" v-for="(tab, key) in tabs" :key="key">
+        <li
+          class="nav-item col-3"
+          v-for="(insight, key) in $page.props.insights"
+          :key="key"
+        >
           <a
             class="nav-link"
             :class="activeKey == key ? 'active show' : ''"
-            href="/"
+            :href="`/insights/${insight.key}`"
+            aria-label="Link to featured insight"
             @click.prevent="changeKey(key)"
             data-bs-toggle="tab"
             :data-bs-target="`#tab-${key}`"
           >
-            <i class="bx bx-alarm"></i>
-            <h4 class="d-none d-lg-block">
-              Modi sit est dela pireda nest {{ key }}
+            <i class="bx bi-blockquote-right"></i>
+            <h4 class="d-none d-lg-block capitalize">
+              {{ insight.title.substring(0, 35).toLowerCase() + " .." }}
             </h4>
           </a>
         </li>
@@ -31,7 +36,7 @@
           class="tab-pane"
           :class="activeKey == key ? 'active show' : ''"
           :id="`tab-${key}`"
-          v-for="(tab, key) in tabs"
+          v-for="(insight, key) in $page.props.insights"
           :key="key"
         >
           <div class="row">
@@ -40,37 +45,15 @@
               data-aos="fade-up"
               data-aos-delay="100"
             >
-              <h3>
-                Voluptatem dignissimos provident quasi corporis voluptates sit
-                assumenda {{ key }}
+              <h3 class="capitalize">
+                {{ insight.title }}
               </h3>
-              <p class="fst-italic">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-              <ul>
-                <li>
-                  <i class="bi bi-check2-all"></i> Ullamco laboris nisi ut
-                  aliquip ex ea commodo consequat.
-                </li>
-                <li>
-                  <i class="bi bi-check2-all"></i> Duis aute irure dolor in
-                  reprehenderit in voluptate velit.
-                </li>
-                <li>
-                  <i class="bi bi-check2-all"></i> Ullamco laboris nisi ut
-                  aliquip ex ea commodo consequat. Duis aute irure dolor in
-                  reprehenderit in voluptate trideta storacalaperda mastiro
-                  dolore eu fugiat nulla pariatur.
-                </li>
-              </ul>
-              <p>
-                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                aute irure dolor in reprehenderit in voluptate velit esse cillum
-                dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                cupidatat non proident, sunt in culpa qui officia deserunt
-                mollit anim id est laborum
-              </p>
+              <p v-html="insight.content.substring(0, 1000)"></p>
+              <Link
+                :href="`/insights/${insight.slug}`"
+                class="btn btn-action btn-sm"
+                >More...</Link
+              >
             </div>
             <div
               class="col-lg-6 order-1 order-lg-2 text-center"
@@ -78,8 +61,8 @@
               data-aos-delay="200"
             >
               <img
-                :src="`${asset}/assets/img/tabs-${key + 1}.jpg`"
-                alt=""
+                :src="`${asset}/assets/img/insights/${insight.image}`"
+                :alt="insight.image"
                 class="img-fluid"
               />
             </div>
@@ -93,9 +76,10 @@
 
 <script setup>
 import SectionTitle from "./../Components/SectionTitle.vue";
-const { usePage } = require("@inertiajs/inertia-vue3");
+const { usePage, Link } = require("@inertiajs/inertia-vue3");
 const { computed, ref } = require("@vue/runtime-core");
 const asset = computed(() => usePage().props.value.asset);
+
 let activeKey = ref(0);
 const changeKey = (key) => {
   activeKey.value = key;
@@ -108,5 +92,8 @@ const tabs = [
 ];
 </script>
 
-<style>
+<style scoped>
+.capitalize {
+  text-transform: capitalize;
+}
 </style>

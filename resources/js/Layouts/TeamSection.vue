@@ -14,20 +14,22 @@
       <div class="row">
         <div
           class="col-lg-3 col-md-6 d-flex align-items-stretch member-hover my-3"
-          v-for="(member, key) in members"
+          v-for="(member, key) in $page.props.teams"
           :key="key"
+          data-aos="fade-up"
+          :data-aos-delay="key * 100"
         >
           <div class="box">
             <div class="body">
               <div class="imgContainer">
                 <img
-                  :src="`${asset}/assets/img/team/team-${key + 1}.jpg`"
+                  :src="`${asset}/assets/img/teams/${member.image}`"
                   :alt="member.name"
                 />
               </div>
               <div class="member-info">
                 <h4>{{ member.name }}</h4>
-                <span>{{ member.title }}</span>
+                <span>{{ member.position }}</span>
               </div>
               <div
                 class="
@@ -39,15 +41,18 @@
                 "
               >
                 <div class="back-content">
-                  <h3 class="text-white fs-5">{{ member.name }}</h3>
-                  <p class="fs-6 text-white">
-                    {{ member.bio }}
-                  </p>
+                  <h3 class="fs-5 border-bottom text-center pb-1">
+                    {{ member.name }}
+                  </h3>
+                  <p
+                    class="fs-6 text-white"
+                    v-html="member.bio.substring(0, 250) + ' ...'"
+                  ></p>
                   <div class="social d-flex justify-content-evenly">
-                    <a href=""><i class="bi bi-twitter"></i></a>
-                    <a href=""><i class="bi bi-facebook"></i></a>
-                    <a href=""><i class="bi bi-instagram"></i></a>
-                    <a href=""><i class="bi bi-linkedin"></i></a>
+                    <a href="#"><i class="bi bi-twitter"></i></a>
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+                    <a href="#"><i class="bi bi-instagram"></i></a>
+                    <a href="#"><i class="bi bi-linkedin"></i></a>
                   </div>
                 </div>
               </div>

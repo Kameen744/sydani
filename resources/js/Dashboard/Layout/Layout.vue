@@ -1,5 +1,5 @@
 <template>
-  <DashboardHeader></DashboardHeader>
+  <!-- <DashboardHeader></DashboardHeader> -->
   <div class="layout-wrapper layout-content-navbar">
     <div class="layout-container">
       <Sidebar></Sidebar>

@@ -6,8 +6,8 @@
           <form
             @submit.prevent="
               edit
-                ? carouselForm.patch(`carousel/update/${edit}`)
-                : carouselForm.post('carousel/store')
+                ? carouselForm.patch(`/admin/carousel/update/${edit}`)
+                : carouselForm.post('/admin/carousel/store')
             "
           >
             <div class="row">
@@ -64,6 +64,7 @@
               <Alert
                 text="Successefully Saved!"
                 :show="carouselForm.recentlySuccessful"
+                :class="carouselForm.recentlySuccessful ? successefull() : ''"
               ></Alert>
               <Toast
                 title="Carousel"
@@ -156,6 +157,13 @@ const carouselForm = useForm({
   image: "",
 });
 
+const successefull = () => {
+  carouselForm.title = "";
+  carouselForm.subTitle = "";
+  carouselForm.image = "";
+  edit.value = false;
+};
+
 const editCarousel = (carousel) => {
   edit.value = carousel.id;
   carouselForm.title = carousel.title;
@@ -163,7 +171,7 @@ const editCarousel = (carousel) => {
 };
 
 const deleteCarousel = (id) => {
-  carouselForm.delete(`carousel/delete/${id}`);
+  carouselForm.delete(`/admin/carousel/delete/${id}`);
 };
 </script>
 

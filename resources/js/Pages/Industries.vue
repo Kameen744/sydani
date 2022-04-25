@@ -1,13 +1,17 @@
 <template>
   <Loader></Loader>
   <Head>
-    <title>{{ $page.props.page }}</title>
+    <title>{{ $page.props.industry.name }}</title>
   </Head>
   <div id="main">
     <Header type="industries"></Header>
     <SubCarousel
-      :title="$page.props.page"
-      :bgImage="`${$page.props.asset}/assets/img/aboutus-1.jpg`"
+      :title="$page.props.industry.name"
+      :bgImage="
+        $page.props.industry.image
+          ? `${$page.props.asset}/assets/img/industries/${$page.props.industry.image}`
+          : `${$page.props.asset}/assets/img/aboutus-1.jpg`
+      "
     ></SubCarousel>
     <AboutIndustry></AboutIndustry>
     <SubPageServices></SubPageServices>

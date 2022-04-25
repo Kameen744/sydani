@@ -64,7 +64,7 @@ class ImageHelper
     // create image name
     public function get_image_name(String $title, String $format='')
     {
-        $title = strip_tags($title);
+        $title = Str::substr(strip_tags($title), 0, 80);
 
         if(!empty($format)) {
            return Str::slug($title) .'.' .$format;
@@ -91,6 +91,20 @@ class ImageHelper
         $this->check_and_del_file($dir .$this->get_image_name($title));
         $this->check_and_del_file($dir .$this->get_image_name($title .'-sm'));
         $this->check_and_del_file($dir .$this->get_image_name($title. '-md'));
+    }
+
+    public function rename(string $folder, string $old, string $new)
+    {
+        $dir =  $this->get_image_path(folder: $folder);
+        $old_file = $dir .$old;
+        $new_file = $dir .$this->get_image_name($new);
+        if(File::exists($old_file)) {
+            try {
+                rename($old_file, $new_file);
+            } catch (\Throwable $th) {
+
+            }
+        }
     }
 
     public function check_and_del_file($file)

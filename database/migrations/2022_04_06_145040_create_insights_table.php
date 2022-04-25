@@ -15,6 +15,11 @@ return new class extends Migration
     {
         Schema::create('insights', function (Blueprint $table) {
             $table->id();
+            $table->text('title');
+            $table->text('content');
+            $table->string('industry_slug');
+            $table->string('slug');
+            $table->string('image');
             $table->timestamps();
         });
     }

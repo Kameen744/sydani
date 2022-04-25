@@ -39598,6 +39598,8 @@ window.AOS = __webpack_require__(/*! ./../../public/sydani/assets/vendor/aos/aos
 
 window.Isotope = __webpack_require__(/*! ./../../public/sydani/assets/vendor/isotope-layout/isotope.pkgd.min.js */ "./public/sydani/assets/vendor/isotope-layout/isotope.pkgd.min.js"); // window.Quill = require('./../../public/dashboard/vendor/quill/quill');
 // window.Helpers = require('./../../public/dashboard/vendor/js/helpers');
+// import Helpers from "public/dashboard/vendor/js/helpers";
+// import Config from "public/dashboard/js/config";
 // dashboard/vendor/js/helpers.js
 // require('./../../public/sydani/assets/js/main.js')
 
@@ -46540,6 +46542,14 @@ var map = {
 		"./resources/js/Pages/Project.vue",
 		"resources_js_Pages_Project_vue"
 	],
+	"./ViewPost.vue": [
+		"./resources/js/Pages/ViewPost.vue",
+		"resources_js_Pages_ViewPost_vue"
+	],
+	"./ViewProject.vue": [
+		"./resources/js/Pages/ViewProject.vue",
+		"resources_js_Pages_ViewProject_vue"
+	],
 	"./Welcome.vue": [
 		"./resources/js/Pages/Welcome.vue",
 		"resources_js_Pages_Welcome_vue"
@@ -46693,7 +46703,7 @@ module.exports = JSON.parse('{"_from":"axios@^0.21.1","_id":"axios@0.21.4","_inB
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames based on template
-/******/ 			return "js/" + chunkId + ".js?id=" + {"resources_js_Pages_About_vue":"4497936a4a09d273","resources_js_Pages_Blog_Blog_vue":"cb47a4d202a8cd10","resources_js_Pages_Blog_BlogHeader_vue":"da66c96956eb6cc8","resources_js_Pages_Blog_BlogLayout_vue":"f86c75c4b8265409","resources_js_Pages_Career_vue":"fe67b26c7500186e","resources_js_Pages_Contact_vue":"3616e62babc5affa","resources_js_Pages_Industries_vue":"a87acfa5426d0be4","resources_js_Pages_OurWork_vue":"e7d44cb335d41e1e","resources_js_Pages_Project_vue":"e0b8c9338ed37ee8","resources_js_Pages_Welcome_vue":"4506146624373578"}[chunkId] + "";
+/******/ 			return "js/" + chunkId + ".js?id=" + {"resources_js_Pages_About_vue":"4bcb7315b7680579","resources_js_Pages_Blog_Blog_vue":"d577497809b6fd05","resources_js_Pages_Blog_BlogHeader_vue":"da66c96956eb6cc8","resources_js_Pages_Blog_BlogLayout_vue":"f86c75c4b8265409","resources_js_Pages_Career_vue":"227e864ad82112ee","resources_js_Pages_Contact_vue":"e265402aa49f6d8f","resources_js_Pages_Industries_vue":"036c6eff3a16c244","resources_js_Pages_OurWork_vue":"e5fa80caf313ca23","resources_js_Pages_Project_vue":"728f08a185fd2f24","resources_js_Pages_ViewPost_vue":"f4d4a2622b045e01","resources_js_Pages_ViewProject_vue":"59fdd3afd0a008c7","resources_js_Pages_Welcome_vue":"2689d62460fe8d81"}[chunkId] + "";
 /******/ 		};
 /******/ 	})();
 /******/ 	

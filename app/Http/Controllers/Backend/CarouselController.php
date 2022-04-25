@@ -28,16 +28,6 @@ class CarouselController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -69,28 +59,6 @@ class CarouselController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -105,14 +73,18 @@ class CarouselController extends Controller
         ]);
 
         if($request->image) {
-
             $image_helper->create(
                 title: $data['title'],
                 folder: 'carousels',
                 sizes: [],
                 image: $request->image,
                 delete_image: $carousel->title);
-
+            $data['image'] = $image_helper->get_image_name(title: $data['title']);
+        } elseif (isset($carousel->image)) {
+            $image_helper->rename(
+                folder: 'carousels',
+                old: $carousel->image,
+                new: $data['title']);
             $data['image'] = $image_helper->get_image_name(title: $data['title']);
         }
 

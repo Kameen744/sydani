@@ -13541,6 +13541,10 @@ li {
     color: #111111;
 }
 
+.img-holder {
+    border: 1px grey solid;
+}
+
 .team .box .body .member-info span {
     display: block;
     font-size: 13px;
@@ -14368,6 +14372,11 @@ li {
     background: #ff9005;
     color: #fff;
     text-decoration: none;
+}
+
+.btn-action {
+    background: #ff9005;
+    color: #fff;
 }
 
 /* @import 'tailwindcss/base';

@@ -7,6 +7,8 @@ window.AOS = require('./../../public/sydani/assets/vendor/aos/aos.js')
 window.Isotope = require('./../../public/sydani/assets/vendor/isotope-layout/isotope.pkgd.min.js')
 // window.Quill = require('./../../public/dashboard/vendor/quill/quill');
 // window.Helpers = require('./../../public/dashboard/vendor/js/helpers');
+// import Helpers from "public/dashboard/vendor/js/helpers";
+// import Config from "public/dashboard/js/config";
 // dashboard/vendor/js/helpers.js
 // require('./../../public/sydani/assets/js/main.js')
 /**

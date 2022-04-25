@@ -3,32 +3,43 @@
     <div class="col-lg-12 mb-4 order-0">
       <div class="card">
         <div class="card-body">
+          <div class="row">
+            <div class="col-12 d-flex justify-content-between">
+              <div class="btn btn-primary" @click="projectList">
+                Projects List
+              </div>
+              <h4>Add New Project</h4>
+            </div>
+            <div class="col-12">
+              <hr />
+            </div>
+          </div>
           <form
             @submit.prevent="
-              edit
-                ? projectForm.patch(`project/update/${edit}`)
-                : projectForm.post('project/store')
+              editForm
+                ? projectForm.patch(`/admin/project/update/${editForm.id}`)
+                : projectForm.post('/admin/project/store')
             "
           >
             <div class="row">
               <div class="col-md-12">
-                <h4>Add New Project</h4>
                 <div class="row">
                   <div class="col-md-6">
-                    <Editor
+                    <Input
                       label="Project Title"
                       v-model="projectForm.title"
                       :error="projectForm.errors.title"
-                    ></Editor>
+                    ></Input>
                   </div>
                   <div class="col-md-6">
-                    <Editor
+                    <TextArea
                       label="Background"
                       v-model="projectForm.background"
                       :error="projectForm.errors.background"
-                    ></Editor>
+                    ></TextArea>
                   </div>
                 </div>
+
                 <div class="row">
                   <div class="col-md-12">
                     <Editor
@@ -47,13 +58,16 @@
                 </div>
               </div>
               <div class="row">
+                <div class="col-12">
+                  <hr />
+                </div>
                 <div class="col-auto">
                   <button
                     type="submit"
                     class="btn btn-primary"
                     :disabled="projectForm.processing"
                   >
-                    {{ edit ? "Update " : "Create " }}
+                    {{ editForm ? "Update " : "Create " }}
                     <Spiner :show="projectForm.processing" />
                   </button>
                 </div>
@@ -66,7 +80,7 @@
                     @click.prevent="showUploadImage = !showUploadImage"
                     :disabled="projectForm.processing"
                   >
-                    {{ edit ? "Change Image" : "Upload Image" }}
+                    {{ editForm ? "Change Image" : "Upload Image" }}
                   </button>
                 </div>
               </div>
@@ -74,8 +88,10 @@
               <Alert
                 text="Successefully Saved!"
                 :show="projectForm.recentlySuccessful"
+                :class="projectForm.recentlySuccessful ? successefull() : ''"
               ></Alert>
               <Toast
+                class="bg-primary"
                 title="Project"
                 subTitle="Successefully Saved!"
                 type="default"
@@ -95,38 +111,6 @@
             :noCircle="true"
             :value="true"
           ></UploadImage>
-
-          <!-- table -->
-          <Table :tHeads="tableHeaders">
-            <tr v-for="(project, key) in $page.props.projects" :key="key">
-              <td v-html="project.title"></td>
-              <td v-html="project.subtitle"></td>
-              <td>
-                <Image
-                  :file="project.image"
-                  folder="projects"
-                  class="img-thumbnail"
-                  width="150"
-                ></Image>
-              </td>
-
-              <td>
-                <div class="d-flex">
-                  <ButtonIcon
-                    btn="primary"
-                    icon="pen"
-                    @click="editProject(project)"
-                  ></ButtonIcon>
-
-                  <ButtonIcon
-                    btn="danger"
-                    icon="trash"
-                    @click="deleteProject(project.id)"
-                  ></ButtonIcon>
-                </div>
-              </td>
-            </tr>
-          </Table>
         </div>
       </div>
     </div>
@@ -150,14 +134,17 @@ import Table from "./Layout/Table.vue";
 import ButtonIcon from "./Layout/ButtonIcon.vue";
 import { onMounted } from "@vue/runtime-core";
 
-const tableHeaders = ["Title", "Background", "Image", "Action"];
+const props = defineProps({
+  editForm: { type: [Boolean, Object] },
+  default: false,
+});
+
 const showUploadImage = ref(false);
 const cropSuccess = (imgDataUrl, field) => {
   projectForm.image = imgDataUrl;
 };
 
 const imgDataUrl = ref("");
-const edit = ref(false);
 
 const projectForm = useForm({
   title: "",
@@ -166,20 +153,24 @@ const projectForm = useForm({
   image: "",
 });
 
-const editProject = (project) => {
-  edit.value = project.id;
-  projectForm.title = project.title;
-  projectForm.background = project.background;
-  projectForm.content = project.content;
+const successefull = () => {
+  projectForm.title = "";
+  projectForm.background = "";
+  projectForm.content = "";
+  projectForm.image = "";
+  edit.value = false;
 };
 
-const deleteProject = (id) => {
-  projectForm.delete(`project/delete/${id}`);
+const projectList = () => {
+  Inertia.visit("/admin/project/list");
 };
 
 onMounted(() => {
-  if (usePage().props.value.project) {
-    console.log(usePage().props.value.project);
+  if (props.editForm) {
+    projectForm.title = props.editForm.title;
+    projectForm.background = props.editForm.background;
+    projectForm.content = props.editForm.content;
+    projectForm.image = "";
   }
 });
 </script>

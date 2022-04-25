@@ -13,59 +13,13 @@
             data-aos-delay="100"
           >
             <MainTitle title="Who We Are"></MainTitle>
-
-            <p>
-              Sydani Group is a global systems integrator (GSI) and managed IT
-              services provider (MSP). We offer comprehensive IT management and
-              consultancy services to organizations worldwide. We work in
-              partnership with clients of various sizes – from mid-market to
-              Fortune 100 – while helping them strengthen their IT foundation,
-              manage risk and compliance, and enhance their competitive
-              position. Learn more about our service offerings:
-            </p>
+            <div id="whoweare" v-html="$page.props.whoweare.content"></div>
             <ul>
               <h3>Core Values</h3>
-              <li>
-                <a href="#">
-                  <i class="bi bi-check-all"></i>
-                  &ensp; Business application management
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <i class="bi bi-check-all"></i>
-                  &ensp; Custom software product development
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <i class="bi bi-check-all"></i>
-                  &ensp; Data insights, business intelligence, artificial
-                  intelligence and big data
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <i class="bi bi-check-all"></i>
-                  &ensp; Workforce productivity apps, development and management
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <i class="bi bi-check-all"></i>
-                  &ensp; Cloud migration, integration, expansion and security
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <i class="bi bi-check-all"></i>
-                  &ensp; Cyber security and end point management
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <i class="bi bi-check-all"></i>
-                  &ensp; IT infrastructure optimizations
+              <li v-for="(value, key) in $page.props.coreValues" :key="key">
+                <a href="/" @click.prevent="">
+                  <i class="bi bi-circle-fill"></i>
+                  &ensp; {{ value.value }}
                 </a>
               </li>
             </ul>
@@ -77,8 +31,13 @@
               order-sm-12 order-xl-1 order-lg-1
               mt-xl-0 mt-lg-0 mt-md-5 mt-sm-5 mt-5
             "
+            data-aos="fade-up"
+            data-aos-delay="200"
           >
-            <img :src="`${asset}/assets/img/services.png`" class="img-fluid" />
+            <img
+              :src="`${asset}/assets/img/whoweare/${$page.props.whoweare.image}`"
+              class="img-fluid"
+            />
           </div>
         </div>
       </div>

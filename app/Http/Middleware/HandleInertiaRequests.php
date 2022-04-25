@@ -2,8 +2,10 @@
 
 namespace App\Http\Middleware;
 
-use Illuminate\Http\Request;
+use App\Models\Contact;
 use Inertia\Middleware;
+use App\Models\Industry;
+use Illuminate\Http\Request;
 
 class HandleInertiaRequests extends Middleware
 {
@@ -35,12 +37,14 @@ class HandleInertiaRequests extends Middleware
     {
         $asset = \asset('sydani');
         $dashAsset = asset('dashboard');
+        $industries = Industry::all('name', 'slug');
+        $contact = Contact::latest()->first();
 
         $auth = [
             'user' => $request->user(),
         ];
         return array_merge(parent::share($request), [
-            ...compact('asset', 'auth', 'dashAsset')
+            ...compact('asset', 'auth', 'dashAsset', 'industries', 'contact')
         ]);
     }
 }

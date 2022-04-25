@@ -11,7 +11,7 @@
         <div class="col-xl-7">
           <h1 class="title-text" v-html="$page.props.carousel.title"></h1>
           <h2 v-html="$page.props.carousel.subtitle"></h2>
-          <a href="#about" class="btn-get-started scrollto">Learn More</a>
+          <Link href="/" class="btn-get-started scrollto">Learn More</Link>
         </div>
       </div>
     </div>
@@ -20,7 +20,7 @@
 
 <script setup>
 import { computed } from "vue";
-import { usePage } from "@inertiajs/inertia-vue3";
+import { Link, usePage } from "@inertiajs/inertia-vue3";
 
 const asset = computed(() => usePage().props.value.asset);
 </script>

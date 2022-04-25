@@ -23,7 +23,8 @@ __webpack_require__.r(__webpack_exports__);
       type: String
     },
     type: {
-      type: String
+      type: String,
+      "default": "text"
     },
     error: {
       type: [Boolean, String],

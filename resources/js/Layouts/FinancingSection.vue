@@ -74,23 +74,24 @@
             col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12
             text-center
             order-sm-1 order-xl-1 order-lg-1
-            mt-xl-0 mt-lg-0 mt-md-5 mt-sm-5 mt-5
+            mt-xl-0 mt-lg-0 mt-5
+            mb-2
           "
         >
           <div class="row">
-            <div class="col-md-12 p-4 pt-0">
-              <div class="row py-3 px-2 shadow financing-card">
+            <div
+              class="col-md-12 p-4 pt-0"
+              v-for="(financing, key) in $page.props.financings"
+              :key="key"
+            >
+              <div class="row py-3 px-2 shadow mb-3 financing-card">
                 <div
                   class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0"
                   data-aos="fade-up"
                   data-aos-delay="100"
                 >
-                  <h4>Voluptatem provident quasi</h4>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
-                  </p>
+                  <h4>{{ financing.title }}</h4>
+                  <p v-html="financing.content.substring(0, 120)"></p>
                 </div>
                 <div
                   class="col-lg-6 order-1 order-lg-2 text-center"
@@ -98,35 +99,8 @@
                   data-aos-delay="200"
                 >
                   <img
-                    :src="`${$page.props.asset}/assets/img/tabs-1.jpg`"
-                    alt=""
-                    class="img-fluid"
-                  />
-                </div>
-              </div>
-            </div>
-            <div class="col-md-12 p-4 pt-0">
-              <div class="row py-3 px-2 shadow financing-card">
-                <div
-                  class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0"
-                  data-aos="fade-up"
-                  data-aos-delay="100"
-                >
-                  <h4>Voluptatem provident quasi</h4>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
-                  </p>
-                </div>
-                <div
-                  class="col-lg-6 order-1 order-lg-2 text-center"
-                  data-aos="fade-up"
-                  data-aos-delay="200"
-                >
-                  <img
-                    :src="`${$page.props.asset}/assets/img/tabs-1.jpg`"
-                    alt=""
+                    :src="`${$page.props.asset}/assets/img/financings/${financing.image}`"
+                    :alt="financing.title"
                     class="img-fluid"
                   />
                 </div>

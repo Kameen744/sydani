@@ -23,7 +23,10 @@
 </template>
 
 <script setup>
+import { onMounted } from "@vue/runtime-core";
 import Layout from "./Layout/Layout.vue";
+
+onMounted(() => {});
 </script>
 
 <style>
