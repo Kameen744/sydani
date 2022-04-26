@@ -16,7 +16,7 @@
         {{-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap"> --}}
 
         @if (Request::is('admin/*') or Request::is('login'))
-            <link rel="stylesheet" href="{{ mix('css/dashboard.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
             <link rel="preconnect" href="https://fonts.googleapis.com" />
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
             <link
@@ -41,11 +41,11 @@
 
             <script src="{{asset('dashboard/js/dashboards-analytics.js')}}"></script>
 
-            <script src="{{ mix('js/dashboard.js') }}" defer></script>
+            <script src="{{ asset('js/dashboard.js') }}" defer></script>
             <script src="{{asset('dashboard/js/main.js')}}" defer></script>
         @else
-            <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-            <script src="{{ mix('js/app.js') }}" defer></script>
+            <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+            <script src="{{ asset('js/app.js') }}" defer></script>
         @endif
 
         {{-- <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-67193804-17"></script>
