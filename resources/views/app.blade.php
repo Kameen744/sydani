@@ -47,15 +47,6 @@
             <link rel="stylesheet" href="{{ asset('css/app.css') }}">
             <script src="{{ asset('js/app.js') }}" defer></script>
         @endif
-
-        {{-- <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-67193804-17"></script>
-        <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'UA-67193804-17');
-        </script> --}}
     </head>
     <body class="font-sans antialiased">
         @routes

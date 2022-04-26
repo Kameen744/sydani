@@ -36,6 +36,7 @@ class HandleInertiaRequests extends Middleware
     public function share(Request $request)
     {
         $asset = \asset('sydani');
+        $public = asset('/');
         $dashAsset = asset('dashboard');
         $industries = Industry::all('name', 'slug');
         $contact = Contact::latest()->first();
@@ -44,7 +45,7 @@ class HandleInertiaRequests extends Middleware
             'user' => $request->user(),
         ];
         return array_merge(parent::share($request), [
-            ...compact('asset', 'auth', 'dashAsset', 'industries', 'contact')
+            ...compact('asset', 'auth', 'dashAsset', 'industries', 'contact', 'public')
         ]);
     }
 }

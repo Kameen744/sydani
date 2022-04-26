@@ -24,17 +24,6 @@
               manage risk and compliance, and enhance their competitive
               position. Learn more about our service offerings:
             </p>
-            <ul>
-              <h3></h3>
-              <li>
-                <a href="#">
-                  <i class="bi bi-circle-fill"></i>
-                  <span class="pt-2 bg-info"
-                    >&ensp; Business application management</span
-                  >
-                </a>
-              </li>
-            </ul>
           </div>
           <div class="col-12">
             <hr />
