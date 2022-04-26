@@ -5,10 +5,9 @@
       <section class="breadcrumbs">
         <div class="container">
           <ol>
-            <li><a href="index.html">Home</a></li>
+            <li><Link href="index.html">Home</Link></li>
             <li>Blog</li>
           </ol>
-          <h2>Blog</h2>
         </div>
       </section>
       <!-- End Breadcrumbs -->
@@ -18,20 +17,23 @@
         <div class="container" data-aos="fade-up">
           <div class="row">
             <div class="col-lg-8 entries">
-              <article class="entry">
+              <article
+                class="entry"
+                v-for="(blog, key) in $page.props.blogs.data"
+                :key="key"
+              >
                 <div class="entry-img">
                   <img
-                    :src="`${$page.props.asset}/assets/img/blog/blog-1.jpg`"
-                    alt=""
+                    :src="`${$page.props.asset}/assets/img/blogs/${blog.image}`"
+                    :alt="blog.slug"
                     class="img-fluid"
                   />
                 </div>
 
                 <h2 class="entry-title">
-                  <a href="blog-single.html"
-                    >Dolorum optio tempore voluptas dignissimos cumque fuga qui
-                    quibusdam quia</a
-                  >
+                  <Link :href="`/blog/read/${blog.slug}`">{{
+                    blog.title
+                  }}</Link>
                 </h2>
 
                 <div class="entry-meta">
@@ -43,7 +45,9 @@
                     <li class="d-flex align-items-center">
                       <i class="bi bi-clock"></i>
                       <a href="blog-single.html"
-                        ><time datetime="2020-01-01">Jan 1, 2020</time></a
+                        ><time datetime="2020-01-01">{{
+                          blog.createdAt
+                        }}</time></a
                       >
                     </li>
                     <li class="d-flex align-items-center">
@@ -54,22 +58,15 @@
                 </div>
 
                 <div class="entry-content">
-                  <p>
-                    Similique neque nam consequuntur ad non maxime aliquam quas.
-                    Quibusdam animi praesentium. Aliquam et laboriosam eius aut
-                    nostrum quidem aliquid dicta. Et eveniet enim. Qui velit est
-                    ea dolorem doloremque deleniti aperiam unde soluta. Est cum
-                    et quod quos aut ut et sit sunt. Voluptate porro consequatur
-                    assumenda perferendis dolore.
-                  </p>
+                  <p v-html="blog.content.substring(0, 200)"></p>
                   <div class="read-more">
-                    <a href="blog-single.html">Read More</a>
+                    <Link :href="`/blog/read/${blog.read}`">Read More</Link>
                   </div>
                 </div>
               </article>
               <!-- End blog entry -->
 
-              <article class="entry">
+              <!-- <article class="entry">
                 <div class="entry-img">
                   <img
                     :src="`${$page.props.asset}/assets/img/blog/blog-2.jpg`"
@@ -118,10 +115,10 @@
                     <a href="blog-single.html">Read More</a>
                   </div>
                 </div>
-              </article>
+              </article> -->
               <!-- End blog entry -->
 
-              <article class="entry">
+              <!-- <article class="entry">
                 <div class="entry-img">
                   <img
                     :src="`${$page.props.asset}/assets/img/blog/blog-3.jpg`"
@@ -168,10 +165,10 @@
                     <a href="blog-single.html">Read More</a>
                   </div>
                 </div>
-              </article>
+              </article> -->
               <!-- End blog entry -->
 
-              <article class="entry">
+              <!-- <article class="entry">
                 <div class="entry-img">
                   <img
                     :src="`${$page.props.asset}/assets/img/blog/blog-4.jpg`"
@@ -221,7 +218,7 @@
                     <a href="blog-single.html">Read More</a>
                   </div>
                 </div>
-              </article>
+              </article> -->
               <!-- End blog entry -->
 
               <div class="blog-pagination">
@@ -248,10 +245,13 @@
                 <h3 class="sidebar-title">Categories</h3>
                 <div class="sidebar-item categories">
                   <ul>
-                    <li>
-                      <a href="#">General <span>(25)</span></a>
+                    <li
+                      v-for="(industry, key) in $page.props.industries"
+                      :key="key"
+                    >
+                      <a href="#">{{ industry.name }} <span>(25)</span></a>
                     </li>
-                    <li>
+                    <!-- <li>
                       <a href="#">Lifestyle <span>(12)</span></a>
                     </li>
                     <li>
@@ -265,7 +265,7 @@
                     </li>
                     <li>
                       <a href="#">Educaion <span>(14)</span></a>
-                    </li>
+                    </li> -->
                   </ul>
                 </div>
                 <!-- End sidebar categories-->
@@ -367,6 +367,7 @@
 </template>
 
 <script setup>
+import { Link } from "@inertiajs/inertia-vue3";
 import Layout from "./../../Layouts/Layout.vue";
 </script>
 

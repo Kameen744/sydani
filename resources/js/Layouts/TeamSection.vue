@@ -16,8 +16,8 @@
           class="col-lg-3 col-md-6 d-flex align-items-stretch member-hover my-3"
           v-for="(member, key) in $page.props.teams"
           :key="key"
-          data-aos="fade-up"
-          :data-aos-delay="key * 100"
+          data-aos="fade-down-right"
+          :data-aos-delay="100 * (key + 1)"
         >
           <div class="box">
             <div class="body">

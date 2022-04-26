@@ -5,8 +5,11 @@
       <div class="row no-gutters">
         <div class="content col-xl-5 d-flex align-items-stretch">
           <div class="content">
-            <h3>{{ $page.props.systems[0].title }}</h3>
-            <p v-html="$page.props.systems[0].content.substring(0, 400)"></p>
+            <!-- <h3>{{ $page.props.systems[0].title }}</h3> -->
+            <p
+              class="intro"
+              v-html="$page.props.intro.sytem_strengthening_intro"
+            ></p>
           </div>
         </div>
         <div class="col-xl-7 d-flex align-items-stretch">
@@ -16,8 +19,8 @@
                 v-for="(system, key) in $page.props.systems"
                 :key="key"
                 class="col-md-6 icon-box"
-                data-aos="fade-up"
-                data-aos-delay="100"
+                data-aos="fade-up-left"
+                :data-aos-delay="100 * (key + 1)"
               >
                 <i class="bx bx-receipt"></i>
                 <h4>{{ system.title }}</h4>
@@ -32,8 +35,22 @@
 </template>
 
 <script setup>
+import { onMounted } from "@vue/runtime-core";
 import SectionTitle from "./../Components/SectionTitle.vue";
+
+// onMounted(() => {
+//   let nodes = document.getElementsByClassName("intro");
+//   for (var i = 0; i < nodes.length; i++) {
+//     if (nodes[i].nodeName.toLowerCase() == "p") {
+//       nodes[i].style.color = "white";
+//       console.log(nodes[i]);
+//     }
+//   }
+// });
 </script>
 
-<style>
+<style scoped>
+.intro p {
+  color: white !important;
+}
 </style>

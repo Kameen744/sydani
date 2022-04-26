@@ -13,61 +13,7 @@
             <h3 class="text-orange-400 py-1 px-3 mb-3">Financing</h3>
           </div>
 
-          <p>
-            Sydani Group is a global systems integrator (GSI) and managed IT
-            services provider (MSP). We offer comprehensive IT management and
-            consultancy services to organizations worldwide. We work in
-            partnership with clients of various sizes – from mid-market to
-            Fortune 100 – while helping them strengthen their IT foundation,
-            manage risk and compliance, and enhance their competitive position.
-            Learn more about our service offerings:
-          </p>
-          <ul>
-            <h3>Core Values</h3>
-            <li>
-              <a href="#">
-                <i class="bi bi-circle-fill"></i>
-                &ensp; Business application management
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="bi bi-circle-fill"></i>
-                &ensp; Custom software product development
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="bi bi-circle-fill"></i>
-                &ensp; Data insights, business intelligence, artificial
-                intelligence and big data
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="bi bi-circle-fill"></i>
-                &ensp; Workforce productivity apps, development and management
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="bi bi-circle-fill"></i>
-                &ensp; Cloud migration, integration, expansion and security
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="bi bi-circle-fill"></i>
-                &ensp; Cyber security and end point management
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="bi bi-circle-fill"></i>
-                &ensp; IT infrastructure optimizations
-              </a>
-            </li>
-          </ul>
+          <p v-html="$page.props.intro.financing_intro"></p>
         </div>
         <div
           class="
@@ -83,13 +29,11 @@
               class="col-md-12 p-4 pt-0"
               v-for="(financing, key) in $page.props.financings"
               :key="key"
+              data-aos="fade-up-right"
+              :data-aos-delay="100 * (key + 1)"
             >
               <div class="row py-3 px-2 shadow mb-3 financing-card">
-                <div
-                  class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0"
-                  data-aos="fade-up"
-                  data-aos-delay="100"
-                >
+                <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
                   <h4>{{ financing.title }}</h4>
                   <p v-html="financing.content.substring(0, 120)"></p>
                 </div>

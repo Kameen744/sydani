@@ -42387,6 +42387,10 @@ var map = {
 		"./resources/js/Dashboard/Auth/Register.vue",
 		"resources_js_Dashboard_Auth_Register_vue"
 	],
+	"./Blog.vue": [
+		"./resources/js/Dashboard/Blog.vue",
+		"resources_js_Dashboard_Blog_vue"
+	],
 	"./Carousel.vue": [
 		"./resources/js/Dashboard/Carousel.vue",
 		"resources_js_Dashboard_Carousel_vue"
@@ -42398,6 +42402,10 @@ var map = {
 	"./CoreValues.vue": [
 		"./resources/js/Dashboard/CoreValues.vue",
 		"resources_js_Dashboard_CoreValues_vue"
+	],
+	"./DataAnalytics.vue": [
+		"./resources/js/Dashboard/DataAnalytics.vue",
+		"resources_js_Dashboard_DataAnalytics_vue"
 	],
 	"./DemandGeneration.vue": [
 		"./resources/js/Dashboard/DemandGeneration.vue",
@@ -42479,6 +42487,10 @@ var map = {
 		"./resources/js/Dashboard/Layout/Toast.vue",
 		"resources_js_Dashboard_Layout_Toast_vue"
 	],
+	"./OurWorkIntro.vue": [
+		"./resources/js/Dashboard/OurWorkIntro.vue",
+		"resources_js_Dashboard_OurWorkIntro_vue"
+	],
 	"./Partner.vue": [
 		"./resources/js/Dashboard/Partner.vue",
 		"resources_js_Dashboard_Partner_vue"
@@ -42498,6 +42510,10 @@ var map = {
 	"./Team.vue": [
 		"./resources/js/Dashboard/Team.vue",
 		"resources_js_Dashboard_Team_vue"
+	],
+	"./Vacancy.vue": [
+		"./resources/js/Dashboard/Vacancy.vue",
+		"resources_js_Dashboard_Vacancy_vue"
 	],
 	"./VisionMission.vue": [
 		"./resources/js/Dashboard/VisionMission.vue",
@@ -42624,7 +42640,7 @@ module.exports = JSON.parse('{"_from":"axios@^0.21.1","_id":"axios@0.21.4","_inB
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames based on template
-/******/ 			return "js/" + chunkId + ".js?id=" + {"resources_js_Dashboard_Auth_AuthLayout_vue":"e4c7c01bdd9706d7","resources_js_Dashboard_Auth_ForgotPassword_vue":"cf386a259fd61650","resources_js_Dashboard_Auth_Login_vue":"f926760e1c712202","resources_js_Dashboard_Auth_Register_vue":"eaeee7967ec67ce4","resources_js_Dashboard_Carousel_vue":"c74be86f9e5c8805","resources_js_Dashboard_Contact_vue":"19f11f69f71666fd","resources_js_Dashboard_CoreValues_vue":"1fdb1cbe01ca05a1","resources_js_Dashboard_DemandGeneration_vue":"29d32f15cb9987ea","resources_js_Dashboard_Financing_vue":"0f302f48bb8f926f","resources_js_Dashboard_Index_vue":"7674e87a508f8e1b","resources_js_Dashboard_Industry_vue":"178b24b652560cbb","resources_js_Dashboard_IndustryService_vue":"ce062814e5545aec","resources_js_Dashboard_Insight_vue":"67b1a0dbfc2306f8","resources_js_Dashboard_Layout_Alert_vue":"0ea053688e7071d9","resources_js_Dashboard_Layout_ButtonIcon_vue":"9a825cd54c0069ab","resources_js_Dashboard_Layout_DashboardHeader_vue":"1c21ae71647d5f7d","resources_js_Dashboard_Layout_Editor_vue":"c48cd6d8cc9d81b0","resources_js_Dashboard_Layout_Input_vue":"f5f1e508b739fb09","resources_js_Dashboard_Layout_Layout_vue":"16fe3587baebad77","resources_js_Dashboard_Layout_Pagination_vue":"010f9280673089ef","resources_js_Dashboard_Layout_Select_vue":"e264b77243c06102","resources_js_Dashboard_Layout_SideBarLink_vue":"7964ff5c9f974bc9","resources_js_Dashboard_Layout_Sidebar_vue":"090e8ed37fff7590","resources_js_Dashboard_Layout_Spiner_vue":"5e1231c1038ebcdf","resources_js_Dashboard_Layout_Table_vue":"140ecd81e8b97682","resources_js_Dashboard_Layout_TextArea_vue":"c8427c5d8b57f823","resources_js_Dashboard_Layout_Toast_vue":"ff215c52ecb14db9","resources_js_Dashboard_Partner_vue":"f469debe1b7e3813","resources_js_Dashboard_Project_vue":"b4f77b3c6d82d42d","resources_js_Dashboard_ProjectList_vue":"1f943ec347072cf0","resources_js_Dashboard_SystemStrength_vue":"8a2239409136b9c8","resources_js_Dashboard_Team_vue":"02989800af2e1f88","resources_js_Dashboard_VisionMission_vue":"825978f478d0de7c","resources_js_Dashboard_Whoweare_vue":"18aa2cdc97a9e27c"}[chunkId] + "";
+/******/ 			return "js/" + chunkId + ".js?id=" + {"resources_js_Dashboard_Auth_AuthLayout_vue":"e4c7c01bdd9706d7","resources_js_Dashboard_Auth_ForgotPassword_vue":"cf386a259fd61650","resources_js_Dashboard_Auth_Login_vue":"f926760e1c712202","resources_js_Dashboard_Auth_Register_vue":"eaeee7967ec67ce4","resources_js_Dashboard_Blog_vue":"c13f15ea1b3892eb","resources_js_Dashboard_Carousel_vue":"6f77a461688b8118","resources_js_Dashboard_Contact_vue":"f370b74d74a9306a","resources_js_Dashboard_CoreValues_vue":"3d3e7e6ac1ace269","resources_js_Dashboard_DataAnalytics_vue":"c5022e2710e59053","resources_js_Dashboard_DemandGeneration_vue":"9d3805840852ee3b","resources_js_Dashboard_Financing_vue":"1ca6acd6c6ed5001","resources_js_Dashboard_Index_vue":"7bb1568d5e0d2d34","resources_js_Dashboard_Industry_vue":"db15e5c35f348a3b","resources_js_Dashboard_IndustryService_vue":"e36d0f493e51782a","resources_js_Dashboard_Insight_vue":"e20ebef2312fe7f9","resources_js_Dashboard_Layout_Alert_vue":"0ea053688e7071d9","resources_js_Dashboard_Layout_ButtonIcon_vue":"9a825cd54c0069ab","resources_js_Dashboard_Layout_DashboardHeader_vue":"1c21ae71647d5f7d","resources_js_Dashboard_Layout_Editor_vue":"c48cd6d8cc9d81b0","resources_js_Dashboard_Layout_Input_vue":"f5f1e508b739fb09","resources_js_Dashboard_Layout_Layout_vue":"1e92a260c8443451","resources_js_Dashboard_Layout_Pagination_vue":"010f9280673089ef","resources_js_Dashboard_Layout_Select_vue":"e264b77243c06102","resources_js_Dashboard_Layout_SideBarLink_vue":"7964ff5c9f974bc9","resources_js_Dashboard_Layout_Sidebar_vue":"7578e29c8b78fafe","resources_js_Dashboard_Layout_Spiner_vue":"5e1231c1038ebcdf","resources_js_Dashboard_Layout_Table_vue":"140ecd81e8b97682","resources_js_Dashboard_Layout_TextArea_vue":"c8427c5d8b57f823","resources_js_Dashboard_Layout_Toast_vue":"ff215c52ecb14db9","resources_js_Dashboard_OurWorkIntro_vue":"967b3731806ba01a","resources_js_Dashboard_Partner_vue":"7aefa7dc75a1863e","resources_js_Dashboard_Project_vue":"1ac6917e65c84c87","resources_js_Dashboard_ProjectList_vue":"a5cf8e3b087df193","resources_js_Dashboard_SystemStrength_vue":"89ae22a2f2350ceb","resources_js_Dashboard_Team_vue":"adc5766224f030e2","resources_js_Dashboard_Vacancy_vue":"e812e1d39b950f67","resources_js_Dashboard_VisionMission_vue":"493104ccb275f235","resources_js_Dashboard_Whoweare_vue":"cdd2087197c8f0b3"}[chunkId] + "";
 /******/ 		};
 /******/ 	})();
 /******/ 	

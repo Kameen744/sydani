@@ -29,7 +29,9 @@
               <li>
                 <a href="#">
                   <i class="bi bi-circle-fill"></i>
-                  &ensp; Business application management
+                  <span class="pt-2 bg-info"
+                    >&ensp; Business application management</span
+                  >
                 </a>
               </li>
             </ul>
@@ -37,80 +39,30 @@
           <div class="col-12">
             <hr />
             <div class="row mb-2">
-              <div class="col-md-4 row-eq-height shadow-sm hover:shadow-lg">
+              <div
+                class="col-md-4 row-eq-height p-2 hover:shadow-lg mb-4"
+                v-for="(project, key) in $page.props.projects"
+                :key="key"
+                data-aos="fade-down-right"
+                :data-aos-delay="100 * (key + 1)"
+              >
                 <div>
-                  <div class="row">
+                  <div class="row shadow p-3">
                     <img
                       class="service-icon col-md-4"
                       :src="`${$page.props.asset}/assets/img/icon1.png`"
                     />
-                    <h3 class="col">
-                      <a href="dynamics-shipping-connector-dsc/index.html"
-                        >Dynamics Shipping Connector (DSC)</a
-                      >
-                    </h3>
+                    <!-- <i class="bi bi-check-square h2"></i> -->
+                    <h5 class="col">{{ project.title.substring(0, 32) }}</h5>
                   </div>
-                  <p class="mt-4">
-                    Unify Your Multi-Carrier Shipping Needs with Dynamics
-                    Shipping Connector (DSC) Developed as an add-on to Dynamics
-                    365 for Finance and Operations,...
-                  </p>
-                  <a
-                    class="read_more"
-                    href="dynamics-shipping-connector-dsc/index.html"
-                    >Read More</a
-                  >
-                </div>
-              </div>
-
-              <div class="col-md-4 row-eq-height shadow-sm">
-                <div>
-                  <div class="row">
-                    <img
-                      class="service-icon col-md-4"
-                      :src="`${$page.props.asset}/assets/img/icon1.png`"
-                    />
-                    <h3 class="col">
-                      <a href="dynamics-shipping-connector-dsc/index.html"
-                        >Dynamics Shipping Connector (DSC)</a
-                      >
-                    </h3>
-                  </div>
-                  <p class="mt-4">
-                    Unify Your Multi-Carrier Shipping Needs with Dynamics
-                    Shipping Connector (DSC) Developed as an add-on to Dynamics
-                    365 for Finance and Operations,...
-                  </p>
-                  <a
-                    class="read_more"
-                    href="dynamics-shipping-connector-dsc/index.html"
-                    >Read More</a
-                  >
-                </div>
-              </div>
-
-              <div class="col-md-4 row-eq-height shadow-sm">
-                <div>
-                  <div class="row">
-                    <img
-                      class="service-icon col-md-4"
-                      :src="`${$page.props.asset}/assets/img/icon1.png`"
-                    />
-                    <h3 class="col">
-                      <a href="dynamics-shipping-connector-dsc/index.html"
-                        >Dynamics Shipping Connector (DSC)</a
-                      >
-                    </h3>
-                  </div>
-                  <p class="mt-4">
-                    Unify Your Multi-Carrier Shipping Needs with Dynamics
-                    Shipping Connector (DSC) Developed as an add-on to Dynamics
-                    365 for Finance and Operations,...
-                  </p>
-                  <a
-                    class="read_more"
-                    href="dynamics-shipping-connector-dsc/index.html"
-                    >Read More</a
+                  <p
+                    class="mt-4 px-1"
+                    v-html="project.background.substring(0, 300)"
+                  ></p>
+                  <Link
+                    :href="`/projects/${project.slug}`"
+                    class="btn-get-started scrollto"
+                    >Read More</Link
                   >
                 </div>
               </div>
@@ -125,7 +77,7 @@
 <script setup>
 import Layout from "./../Layouts/Layout.vue";
 import SubCarousel from "./../Layouts/SubCarousel.vue";
-import { Head } from "@inertiajs/inertia-vue3";
+import { Head, Link } from "@inertiajs/inertia-vue3";
 </script>
 
 <style scoped>

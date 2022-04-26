@@ -37,20 +37,7 @@
                       <Spiner :show="demandGenerationForm.processing" />
                     </button>
                   </div>
-                  <div class="col-auto">
-                    <button
-                      class="btn"
-                      :class="
-                        demandGenerationForm.errors.image
-                          ? 'btn-danger'
-                          : 'btn-secondary'
-                      "
-                      @click.prevent="showUploadImage = !showUploadImage"
-                      :disabled="demandGenerationForm.processing"
-                    >
-                      {{ edit ? "Change Image" : "Upload Image" }}
-                    </button>
-                  </div>
+                  <div class="col-auto"></div>
                 </div>
               </div>
 

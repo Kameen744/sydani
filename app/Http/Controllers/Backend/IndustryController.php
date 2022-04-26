@@ -40,19 +40,17 @@ class IndustryController extends Controller
         $images = [$request->image, $request->service_image];
 
         foreach ($images as $key => $image) {
-            switch ($key) {
-
-                case 1:
-                    $img_name = $data['name'] .' service';
-                    $img_tag = 'service_image';
-                    break;
-                default:
-                    $img_name = $data['name'] .' main';
-                    $img_tag = 'image';
-                    break;
-            }
 
             if($image) {
+
+                if($key == 1) {
+                    $img_name = $data['name'] .' service';
+                    $img_tag = 'service_image';
+                } else {
+                    $img_name = $data['name'] .' main';
+                    $img_tag = 'image';
+                }
+
                 $image_helper->create(
                     title: $img_name,
                     folder: 'industries',
@@ -84,20 +82,20 @@ class IndustryController extends Controller
             'intro'    => 'required'
         ]);
 
-        $images = [$request->image, $request->insight_image, $request->service_image];
+        $images = [$request->image, $request->service_image];
 
         foreach ($images as $key => $image) {
-            switch ($key) {
-                case 1:
+
+            if($image) {
+
+                if($key == 1) {
                     $img_name = $data['name'] .' service';
                     $img_tag = 'service_image';
-                    break;
-                default:
+                } else {
                     $img_name = $data['name'] .' main';
                     $img_tag = 'image';
-                    break;
-            }
-            if($image) {
+                }
+
                 $image_helper->create(
                     title: $img_name,
                     folder: 'industries',

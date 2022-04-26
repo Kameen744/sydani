@@ -37,20 +37,7 @@
                       <Spiner :show="systemStrengthForm.processing" />
                     </button>
                   </div>
-                  <div class="col-auto">
-                    <button
-                      class="btn"
-                      :class="
-                        systemStrengthForm.errors.image
-                          ? 'btn-danger'
-                          : 'btn-secondary'
-                      "
-                      @click.prevent="showUploadImage = !showUploadImage"
-                      :disabled="systemStrengthForm.processing"
-                    >
-                      {{ edit ? "Change Image" : "Upload Image" }}
-                    </button>
-                  </div>
+                  <div class="col-auto"></div>
                 </div>
               </div>
 

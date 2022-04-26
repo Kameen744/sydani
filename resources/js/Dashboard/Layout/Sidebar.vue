@@ -116,7 +116,7 @@ const websiteNavLinks = [
     links: [{ link: "Add/Edit Team", url: "/admin/team" }],
   },
   {
-    title: "Idustries",
+    title: "Industries",
     activeKey: 1.6,
     links: [
       { link: "Add/Edit Industries", url: "/admin/industry" },
@@ -128,12 +128,10 @@ const websiteNavLinks = [
     activeKey: 1.8,
     links: [
       { link: "Financing", url: "/admin/financing" },
-      {
-        link: "System Strengthening",
-        url: "/admin/system",
-      },
+      { link: "System Strengthening", url: "/admin/system" },
       { link: "Demand Generation", url: "/admin/demand" },
       { link: "Data Analytics", url: "/admin/data-analytics" },
+      { link: "Sections Intro", url: "/admin/ourwork/intro" },
     ],
   },
   {
@@ -158,11 +156,13 @@ const postNavLink = [
   {
     title: "Blog",
     activeKey: 3,
-    links: [
-      { link: "Create Project", url: "/admin/project" },
-      { link: "Project List", url: "/admin/project/list" },
-      { link: "Add/Edit Insight", url: "/admin/insight" },
-    ],
+    links: [{ link: "Post Blog", url: "/admin/blog" }],
+  },
+
+  {
+    title: "Vacancy",
+    activeKey: 4,
+    links: [{ link: "Post New Job", url: "/admin/vacancy" }],
   },
 ];
 

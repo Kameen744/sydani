@@ -1,69 +1,22 @@
 <template>
   <section id="faq" class="faq">
     <div class="container" data-aos="fade-up">
-      <SectionTitle
-        title="Demand Generation"
-        subtitle="Magnam dolores commodi suscipit. Necessitatibus Quisquam quos
-          quisquam cupiditate. Et nemo qui impedit suscipit alias ea."
-      ></SectionTitle>
+      <div class="section-title">
+        <h2>Demand Generation</h2>
+        <p v-html="$page.props.intro.demand_generation_intro"></p>
+      </div>
       <div class="row">
-        <div class="col-md-3 p-4 pt-0">
+        <div
+          class="col-md-3 p-4 pt-0"
+          v-for="(demand, key) in $page.props.demands"
+          :key="key"
+          data-aos="zoom-in-left"
+          :data-aos-delay="100 * (key + 1)"
+        >
           <div class="row py-3 px-2 shadow demand-card">
-            <div
-              class="col-lg-12 order-2 order-lg-1 mt-3 mt-lg-0"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              <h4>Voluptatem provident quasi</h4>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 p-4 pt-0">
-          <div class="row py-3 px-2 shadow demand-card">
-            <div
-              class="col-lg-12 order-2 order-lg-1 mt-3 mt-lg-0"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              <h4>Voluptatem provident quasi</h4>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 p-4 pt-0">
-          <div class="row py-3 px-2 shadow demand-card">
-            <div
-              class="col-lg-12 order-2 order-lg-1 mt-3 mt-lg-0"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              <h4>Voluptatem provident quasi</h4>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 p-4 pt-0">
-          <div class="row py-3 px-2 shadow demand-card">
-            <div
-              class="col-lg-12 order-2 order-lg-1 mt-3 mt-lg-0"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              <h4>Voluptatem provident quasi</h4>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
+            <div class="col-lg-12 order-2 order-lg-1 mt-3 mt-lg-0">
+              <h4>{{ demand.title }}</h4>
+              <p v-html="demand.content.substring(0, 200)"></p>
             </div>
           </div>
         </div>

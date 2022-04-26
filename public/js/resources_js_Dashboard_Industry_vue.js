@@ -546,7 +546,7 @@ __webpack_require__.r(__webpack_exports__);
         url: "/admin/team"
       }]
     }, {
-      title: "Idustries",
+      title: "Industries",
       activeKey: 1.6,
       links: [{
         link: "Add/Edit Industries",
@@ -570,6 +570,9 @@ __webpack_require__.r(__webpack_exports__);
       }, {
         link: "Data Analytics",
         url: "/admin/data-analytics"
+      }, {
+        link: "Sections Intro",
+        url: "/admin/ourwork/intro"
       }]
     }, {
       title: "Contact Us",
@@ -602,14 +605,15 @@ __webpack_require__.r(__webpack_exports__);
       title: "Blog",
       activeKey: 3,
       links: [{
-        link: "Create Project",
-        url: "/admin/project"
-      }, {
-        link: "Project List",
-        url: "/admin/project/list"
-      }, {
-        link: "Add/Edit Insight",
-        url: "/admin/insight"
+        link: "Post Blog",
+        url: "/admin/blog"
+      }]
+    }, {
+      title: "Vacancy",
+      activeKey: 4,
+      links: [{
+        link: "Post New Job",
+        url: "/admin/vacancy"
       }]
     }];
     var usersNavLink = [{

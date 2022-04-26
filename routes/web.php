@@ -4,19 +4,22 @@ use Inertia\Inertia;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
-use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\WhoController;
+use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\Backend\TeamController;
 use App\Http\Controllers\Backend\ContactController;
 use App\Http\Controllers\Backend\InsightController;
 use App\Http\Controllers\Backend\PartnerController;
 use App\Http\Controllers\Backend\ProjectController;
+use App\Http\Controllers\Backend\VacancyController;
 use App\Http\Controllers\Backend\CarouselController;
 use App\Http\Controllers\Backend\IndustryController;
 use App\Http\Controllers\Backend\FinancingController;
 use App\Http\Controllers\Backend\CoreValuesController;
+use App\Http\Controllers\Backend\OurWorkIntroController;
+use App\Http\Controllers\Backend\DataAnalyticsController;
 use App\Http\Controllers\Backend\VisionMissionController;
 use App\Http\Controllers\Backend\DemandGenerationController;
 use App\Http\Controllers\Backend\SystemStrengtheningController;
@@ -29,7 +32,9 @@ Route::get('/career', [PageController::class, 'career']);
 Route::get('/industries/{name}', [PageController::class, 'industries']);
 Route::get('/ourwork',  [PageController::class, 'ourwork']);
 Route::get('/projects', [PageController::class, 'projects']);
-Route::get('/blog', [BlogController::class, 'index']);
+Route::get('/blog', [PageController::class, 'blog_index']);
+Route::get('/blog/read/{slug}', [PageController::class, 'blog_view']);
+Route::get('/blog/category/{slug}', [PageController::class, 'blog_category']);
 Route::post('newsletter/subscribe', [PageController::class, 'newsletter']);
 
 Route::middleware(['auth'])->group(function () {
@@ -128,11 +133,6 @@ Route::middleware(['auth'])->group(function () {
             Route::post('/financing/store', 'store');
             Route::patch('/financing/update/{financing}', 'update');
             Route::delete('/financing/delete/{financing}', 'destroy');
-            // financing - intro
-            Route::get('/financing/intro', 'intro')->name('financing.intro');
-            Route::post('/financing/intro/store', 'intro_store');
-            Route::patch('/financing/intro/update/{intro}', 'intro_update');
-            Route::delete('/financing/intro/delete/{intro}', 'intro_delete');
         });
 
         // System Strengthening
@@ -141,11 +141,6 @@ Route::middleware(['auth'])->group(function () {
             Route::post('/system/store', 'store');
             Route::patch('/system/update/{system}', 'update');
             Route::delete('/system/delete/{system}', 'destroy');
-            // System Strenthening - intro
-            Route::get('/system/intro', 'intro')->name('system.intro');
-            Route::post('/system/intro/store', 'intro_store');
-            Route::patch('/system/intro/update/{intro}', 'intro_update');
-            Route::delete('/system/intro/delete/{intro}', 'intro_delete');
         });
 
         // Demand Generation
@@ -154,26 +149,31 @@ Route::middleware(['auth'])->group(function () {
             Route::post('/demand/store', 'store');
             Route::patch('/demand/update/{demand}', 'update');
             Route::delete('/demand/delete/{demand}', 'destroy');
-            // Demand Generation - intro
-            Route::get('/demand/intro', 'intro')->name('demand.intro');
-            Route::post('/demand/intro/store', 'intro_store');
-            Route::patch('/demand/intro/update/{intro}', 'intro_update');
-            Route::delete('/demand/intro/delete/{intro}', 'intro_delete');
         });
 
         // Data Analytics
-        Route::controller(FinancingController::class)->group(function() {
-            Route::get('/data-analytics', 'index')->name('data-analytics');
+        Route::controller(DataAnalyticsController::class)->group(function() {
+            Route::get('/data-analytics', 'index')->name('data.analytics');
             Route::post('/data-analytics/store', 'store');
-            Route::patch('/data-analytics/update/{data}', 'update');
-            Route::delete('/data-analytics/delete/{data}', 'destroy');
-            // Data Analytics - intro
-            Route::get('/data-analytics/intro', 'intro')->name('data.anl.intro');
-            Route::post('/data-analytics/intro/store', 'intro_store');
-            Route::patch('/data-analytics/intro/update/{intro}', 'intro_update');
-            Route::delete('/data-analytics/intro/delete/{intro}', 'intro_delete');
+            Route::patch('/data-analytics/update/{analytic}', 'update');
+            Route::delete('/data-analytics/delete/{analytic}', 'destroy');
         });
 
+        // Our work intros routes
+        Route::controller(OurWorkIntroController::class)->group(function() {
+            Route::get('/ourwork/intro', 'index')->name('ourwork.intro');
+            Route::post('/ourwork/intro/store', 'store');
+            Route::patch('/ourwork/intro/update/{intro}', 'update');
+            Route::delete('/ourwork/intro/delete/{intro}', 'destroy');
+        });
+
+        // vacancy routes
+        Route::controller(VacancyController::class)->group(function() {
+            Route::get('/vacancy', 'index')->name('vacancy');
+            Route::post('/vacancy/store', 'store');
+            Route::patch('/vacancy/update/{vacancy}', 'update');
+            Route::delete('/vacancy/delete/{vacancy}', 'destroy');
+        });
 
         // Contact us Routes
         Route::controller(ContactController::class)->group(function() {
@@ -181,6 +181,14 @@ Route::middleware(['auth'])->group(function () {
             Route::post('/contact/store', 'store');
             Route::patch('/contact/update/{contact}', 'update');
             Route::delete('/contact/delete/{contact}', 'destroy');
+        });
+
+        // Blog-Admin Routes
+        Route::controller(BlogController::class)->group(function() {
+            Route::get('/blog', 'index')->name('blog');
+            Route::post('/blog/store', 'store');
+            Route::patch('/blog/update/{blog}', 'update');
+            Route::delete('/blog/delete/{blog}', 'destroy');
         });
     });
 });

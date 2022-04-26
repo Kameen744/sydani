@@ -106,11 +106,6 @@ const coreValueForm = useForm({
 
 const successefull = () => {
   coreValueForm.value = "";
-  edit.value = false;
-};
-
-const successefull = () => {
-  coreValueForm.value = "";
 };
 
 const editCoreValue = (coreValue) => {

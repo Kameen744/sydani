@@ -1654,8 +1654,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
       "class": "col-lg-3 col-md-6 d-flex align-items-stretch member-hover my-3",
       key: key,
-      "data-aos": "fade-up",
-      "data-aos-delay": key * 100
+      "data-aos": "fade-down-right",
+      "data-aos-delay": 100 * (key + 1)
     }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
       src: "".concat($setup.asset, "/assets/img/teams/").concat(member.image),
       alt: member.name

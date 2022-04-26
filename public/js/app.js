@@ -46703,7 +46703,7 @@ module.exports = JSON.parse('{"_from":"axios@^0.21.1","_id":"axios@0.21.4","_inB
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames based on template
-/******/ 			return "js/" + chunkId + ".js?id=" + {"resources_js_Pages_About_vue":"4bcb7315b7680579","resources_js_Pages_Blog_Blog_vue":"d577497809b6fd05","resources_js_Pages_Blog_BlogHeader_vue":"da66c96956eb6cc8","resources_js_Pages_Blog_BlogLayout_vue":"f86c75c4b8265409","resources_js_Pages_Career_vue":"227e864ad82112ee","resources_js_Pages_Contact_vue":"e265402aa49f6d8f","resources_js_Pages_Industries_vue":"036c6eff3a16c244","resources_js_Pages_OurWork_vue":"e5fa80caf313ca23","resources_js_Pages_Project_vue":"728f08a185fd2f24","resources_js_Pages_ViewPost_vue":"f4d4a2622b045e01","resources_js_Pages_ViewProject_vue":"59fdd3afd0a008c7","resources_js_Pages_Welcome_vue":"2689d62460fe8d81"}[chunkId] + "";
+/******/ 			return "js/" + chunkId + ".js?id=" + {"resources_js_Pages_About_vue":"2c371069097d88d1","resources_js_Pages_Blog_Blog_vue":"3836cc7f888fae48","resources_js_Pages_Blog_BlogHeader_vue":"da66c96956eb6cc8","resources_js_Pages_Blog_BlogLayout_vue":"f86c75c4b8265409","resources_js_Pages_Career_vue":"4ba6a3ba0993e73d","resources_js_Pages_Contact_vue":"e265402aa49f6d8f","resources_js_Pages_Industries_vue":"036c6eff3a16c244","resources_js_Pages_OurWork_vue":"e36ddadef9cc4c7a","resources_js_Pages_Project_vue":"7b00aca89e4b0cf1","resources_js_Pages_ViewPost_vue":"f4d4a2622b045e01","resources_js_Pages_ViewProject_vue":"59fdd3afd0a008c7","resources_js_Pages_Welcome_vue":"2689d62460fe8d81"}[chunkId] + "";
 /******/ 		};
 /******/ 	})();
 /******/ 	

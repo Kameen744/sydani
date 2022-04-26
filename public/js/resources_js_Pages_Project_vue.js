@@ -281,7 +281,8 @@ __webpack_require__.r(__webpack_exports__);
     var __returned__ = {
       Layout: _Layouts_Layout_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
       SubCarousel: _Layouts_SubCarousel_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-      Head: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_2__.Head
+      Head: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_2__.Head,
+      Link: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_2__.Link
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
@@ -1071,7 +1072,9 @@ var _hoisted_6 = /*#__PURE__*/_withScopeId(function () {
     href: "#"
   }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
     "class": "bi bi-circle-fill"
-  }), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("   Business application management ")])])])], -1
+  }), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+    "class": "pt-2 bg-info"
+  }, "  Business application management")])])])], -1
   /* HOISTED */
   );
 });
@@ -1089,110 +1092,17 @@ var _hoisted_8 = /*#__PURE__*/_withScopeId(function () {
 var _hoisted_9 = {
   "class": "row mb-2"
 };
-var _hoisted_10 = {
-  "class": "col-md-4 row-eq-height shadow-sm hover:shadow-lg"
-};
+var _hoisted_10 = ["data-aos-delay"];
 var _hoisted_11 = {
-  "class": "row"
+  "class": "row shadow p-3"
 };
 var _hoisted_12 = ["src"];
-
-var _hoisted_13 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", {
-    "class": "col"
-  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-    href: "dynamics-shipping-connector-dsc/index.html"
-  }, "Dynamics Shipping Connector (DSC)")], -1
-  /* HOISTED */
-  );
-});
-
-var _hoisted_14 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-    "class": "mt-4"
-  }, " Unify Your Multi-Carrier Shipping Needs with Dynamics Shipping Connector (DSC) Developed as an add-on to Dynamics 365 for Finance and Operations,... ", -1
-  /* HOISTED */
-  );
-});
-
-var _hoisted_15 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-    "class": "read_more",
-    href: "dynamics-shipping-connector-dsc/index.html"
-  }, "Read More", -1
-  /* HOISTED */
-  );
-});
-
-var _hoisted_16 = {
-  "class": "col-md-4 row-eq-height shadow-sm"
+var _hoisted_13 = {
+  "class": "col"
 };
-var _hoisted_17 = {
-  "class": "row"
-};
-var _hoisted_18 = ["src"];
+var _hoisted_14 = ["innerHTML"];
 
-var _hoisted_19 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", {
-    "class": "col"
-  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-    href: "dynamics-shipping-connector-dsc/index.html"
-  }, "Dynamics Shipping Connector (DSC)")], -1
-  /* HOISTED */
-  );
-});
-
-var _hoisted_20 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-    "class": "mt-4"
-  }, " Unify Your Multi-Carrier Shipping Needs with Dynamics Shipping Connector (DSC) Developed as an add-on to Dynamics 365 for Finance and Operations,... ", -1
-  /* HOISTED */
-  );
-});
-
-var _hoisted_21 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-    "class": "read_more",
-    href: "dynamics-shipping-connector-dsc/index.html"
-  }, "Read More", -1
-  /* HOISTED */
-  );
-});
-
-var _hoisted_22 = {
-  "class": "col-md-4 row-eq-height shadow-sm"
-};
-var _hoisted_23 = {
-  "class": "row"
-};
-var _hoisted_24 = ["src"];
-
-var _hoisted_25 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", {
-    "class": "col"
-  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-    href: "dynamics-shipping-connector-dsc/index.html"
-  }, "Dynamics Shipping Connector (DSC)")], -1
-  /* HOISTED */
-  );
-});
-
-var _hoisted_26 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-    "class": "mt-4"
-  }, " Unify Your Multi-Carrier Shipping Needs with Dynamics Shipping Connector (DSC) Developed as an add-on to Dynamics 365 for Finance and Operations,... ", -1
-  /* HOISTED */
-  );
-});
-
-var _hoisted_27 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-    "class": "read_more",
-    href: "dynamics-shipping-connector-dsc/index.html"
-  }, "Read More", -1
-  /* HOISTED */
-  );
-});
+var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Read More");
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Head"], null, {
@@ -1209,22 +1119,42 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         "bg-Image": "".concat(_ctx.$page.props.asset, "/assets/img/aboutus-1.jpg")
       }, null, 8
       /* PROPS */
-      , ["bg-Image"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [_hoisted_5, _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [_hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-        "class": "service-icon col-md-4",
-        src: "".concat(_ctx.$page.props.asset, "/assets/img/icon1.png")
-      }, null, 8
-      /* PROPS */
-      , _hoisted_12), _hoisted_13]), _hoisted_14, _hoisted_15])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-        "class": "service-icon col-md-4",
-        src: "".concat(_ctx.$page.props.asset, "/assets/img/icon1.png")
-      }, null, 8
-      /* PROPS */
-      , _hoisted_18), _hoisted_19]), _hoisted_20, _hoisted_21])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_22, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_23, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-        "class": "service-icon col-md-4",
-        src: "".concat(_ctx.$page.props.asset, "/assets/img/icon1.png")
-      }, null, 8
-      /* PROPS */
-      , _hoisted_24), _hoisted_25]), _hoisted_26, _hoisted_27])])])])])])])];
+      , ["bg-Image"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [_hoisted_5, _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [_hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(_ctx.$page.props.projects, function (project, key) {
+        return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
+          "class": "col-md-4 row-eq-height p-2 hover:shadow-lg mb-4",
+          key: key,
+          "data-aos": "fade-down-right",
+          "data-aos-delay": 100 * (key + 1)
+        }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+          "class": "service-icon col-md-4",
+          src: "".concat(_ctx.$page.props.asset, "/assets/img/icon1.png")
+        }, null, 8
+        /* PROPS */
+        , _hoisted_12), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <i class=\"bi bi-check-square h2\"></i> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", _hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(project.title.substring(0, 32)), 1
+        /* TEXT */
+        )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+          "class": "mt-4 px-1",
+          innerHTML: project.background.substring(0, 300)
+        }, null, 8
+        /* PROPS */
+        , _hoisted_14), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Link"], {
+          href: "/projects/".concat(project.slug),
+          "class": "btn-get-started scrollto"
+        }, {
+          "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+            return [_hoisted_15];
+          }),
+          _: 2
+          /* DYNAMIC */
+
+        }, 1032
+        /* PROPS, DYNAMIC_SLOTS */
+        , ["href"])])], 8
+        /* PROPS */
+        , _hoisted_10);
+      }), 128
+      /* KEYED_FRAGMENT */
+      ))])])])])])];
     }),
     _: 1
     /* STABLE */

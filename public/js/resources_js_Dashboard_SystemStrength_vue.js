@@ -419,7 +419,7 @@ __webpack_require__.r(__webpack_exports__);
         url: "/admin/team"
       }]
     }, {
-      title: "Idustries",
+      title: "Industries",
       activeKey: 1.6,
       links: [{
         link: "Add/Edit Industries",
@@ -443,6 +443,9 @@ __webpack_require__.r(__webpack_exports__);
       }, {
         link: "Data Analytics",
         url: "/admin/data-analytics"
+      }, {
+        link: "Sections Intro",
+        url: "/admin/ourwork/intro"
       }]
     }, {
       title: "Contact Us",
@@ -475,14 +478,15 @@ __webpack_require__.r(__webpack_exports__);
       title: "Blog",
       activeKey: 3,
       links: [{
-        link: "Create Project",
-        url: "/admin/project"
-      }, {
-        link: "Project List",
-        url: "/admin/project/list"
-      }, {
-        link: "Add/Edit Insight",
-        url: "/admin/insight"
+        link: "Post Blog",
+        url: "/admin/blog"
+      }]
+    }, {
+      title: "Vacancy",
+      activeKey: 4,
+      links: [{
+        link: "Post New Job",
+        url: "/admin/vacancy"
       }]
     }];
     var usersNavLink = [{
@@ -1592,25 +1596,27 @@ var _hoisted_9 = {
   "class": "col-auto"
 };
 var _hoisted_10 = ["disabled"];
-var _hoisted_11 = {
-  "class": "col-auto"
-};
-var _hoisted_12 = ["disabled"];
 
-var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("hr", null, null, -1
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "col-auto"
+}, null, -1
 /* HOISTED */
 );
 
+var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("hr", null, null, -1
+/* HOISTED */
+);
+
+var _hoisted_13 = ["innerHTML"];
 var _hoisted_14 = ["innerHTML"];
-var _hoisted_15 = ["innerHTML"];
-var _hoisted_16 = {
+var _hoisted_15 = {
   "class": "d-flex"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["Layout"], null, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_hoisted_4, _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
-        onSubmit: _cache[3] || (_cache[3] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
+        onSubmit: _cache[2] || (_cache[2] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
           return $setup.edit ? $setup.systemStrengthForm.patch("/admin/system/update/".concat($setup.edit)) : $setup.systemStrengthForm.post('/admin/system/store');
         }, ["prevent"]))
       }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Input"], {
@@ -1643,15 +1649,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       /* PROPS */
       , ["show"])], 8
       /* PROPS */
-      , _hoisted_10)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-        "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["btn", $setup.systemStrengthForm.errors.image ? 'btn-danger' : 'btn-secondary']),
-        onClick: _cache[2] || (_cache[2] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
-          return $setup.showUploadImage = !$setup.showUploadImage;
-        }, ["prevent"])),
-        disabled: $setup.systemStrengthForm.processing
-      }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.edit ? "Change Image" : "Upload Image"), 11
-      /* TEXT, CLASS, PROPS */
-      , _hoisted_12)])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Alert"], {
+      , _hoisted_10)]), _hoisted_11])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Alert"], {
         text: "Successefully Saved!",
         show: $setup.systemStrengthForm.recentlySuccessful,
         "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)($setup.systemStrengthForm.recentlySuccessful ? $setup.successefull() : '')
@@ -1666,7 +1664,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       /* PROPS */
       , ["show"])])], 32
       /* HYDRATE_EVENTS */
-      ), _hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" table "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Table"], {
+      ), _hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" table "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Table"], {
         tHeads: $setup.tableHeaders
       }, {
         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
@@ -1677,11 +1675,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
               innerHTML: systemStrength.title
             }, null, 8
             /* PROPS */
-            , _hoisted_14), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", {
+            , _hoisted_13), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", {
               innerHTML: systemStrength.content
             }, null, 8
             /* PROPS */
-            , _hoisted_15), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["ButtonIcon"], {
+            , _hoisted_14), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["ButtonIcon"], {
               btn: "primary",
               icon: "pen",
               onClick: function onClick($event) {

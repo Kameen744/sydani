@@ -2,29 +2,23 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Http\Controllers\Controller;
+use Inertia\Inertia;
 use Illuminate\Http\Request;
+use App\Models\DataAnalytics;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Redirect;
 
 class DataAnalyticsController extends Controller
 {
-    /**
+     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        $dataAnalytics = DataAnalytics::latest()->get();
+        return Inertia::render('DataAnalytics', compact('dataAnalytics'));
     }
 
     /**
@@ -35,29 +29,17 @@ class DataAnalyticsController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $data = $request->validate([
+            'title' => 'required',
+            'content' => 'required'
+        ]);
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
+        DataAnalytics::create([
+            'title' => $data['title'],
+            'content' => $data['content'],
+        ]);
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+        return Redirect::route('data.analytics');
     }
 
     /**
@@ -67,9 +49,15 @@ class DataAnalyticsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, DataAnalytics $analytic)
     {
-        //
+        $data = $request->validate([
+            'title' => 'required',
+            'content' => 'required'
+        ]);
+
+        $analytic->update($data);
+        return Redirect::route('data.analytics');
     }
 
     /**
@@ -78,8 +66,9 @@ class DataAnalyticsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(DataAnalytics $analytic)
     {
-        //
+        $analytic->delete();
+        return Redirect::route('data.analytics');
     }
 }
