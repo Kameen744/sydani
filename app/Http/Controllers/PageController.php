@@ -120,12 +120,18 @@ class PageController extends Controller
     public function blog_view($slug)
     {
         $blog = Blog::where('slug', $slug)->first();
-        return Inertia::render('Blog/ReadBlog');
+        $industries = Industry::all('name', 'slug');
+        $recent_blogs = Blog::latest()->take(4)->get();
+        return Inertia::render('Blog/ReadBlog', compact('blog', 'industries', 'recent_blogs'));
     }
 
     public function blog_category($industry_slug)
     {
         $blogs = Blog::where('industry_slug', $industry_slug)->latest()->paginate(5);
-        return Inertia::render('Blog/BlogCategory');
+
+        if($blogs[0] == null) {
+            return redirect()->back();
+        }
+        return Inertia::render('Blog/BlogCategory', compact('blogs'));
     }
 }

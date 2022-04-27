@@ -6,7 +6,8 @@
         <div class="container">
           <ol>
             <li><Link href="/">Home</Link></li>
-            <li>Blog</li>
+            <li><Link href="/blog">Blog</Link></li>
+            <li>Read</li>
           </ol>
         </div>
       </section>
@@ -14,31 +15,21 @@
 
       <!-- ======= Blog Section ======= -->
       <section id="blog" class="blog">
-        <div class="container">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
           <div class="row">
             <div class="col-lg-8 entries">
-              <article
-                class="entry"
-                v-for="(blog, key) in $page.props.blogs.data"
-                :key="key"
-                data-aos="fade-up-left"
-                data-aos-delay="100"
-              >
+              <article class="entry">
                 <div class="">
                   <img
-                    :src="`${$page.props.asset}/assets/img/blogs/${blog.image}`"
-                    :alt="blog.slug"
+                    :src="`${$page.props.asset}/assets/img/blogs/${$page.props.blog.image}`"
+                    :alt="$page.props.blog.slug"
                     class="img-fluid shadow-lg"
-                    data-aos="flip-left"
-                    data-aos-delay="200"
                   />
                   <hr />
                 </div>
 
                 <h1 class="entry-title py-2">
-                  <Link :href="`/blog/read/${blog.slug}`">{{
-                    blog.title
-                  }}</Link>
+                  {{ $page.props.blog.title }}
                 </h1>
 
                 <div class="entry-meta">
@@ -51,7 +42,7 @@
                       <i class="bi bi-clock"></i>
                       <a href="blog-single.html"
                         ><time datetime="2020-01-01">{{
-                          formatDate(blog.created_at)
+                          formatDate($page.props.blog.created_at)
                         }}</time></a
                       >
                     </li>
@@ -63,34 +54,15 @@
                 </div>
 
                 <div class="entry-content">
-                  <p v-html="blog.content.substring(0, 500) + ' ...'"></p>
-                  <div class="read-more">
-                    <Link :href="`/blog/read/${blog.read}`">Read More</Link>
-                  </div>
+                  <p class="blog-content" v-html="$page.props.blog.content"></p>
                 </div>
               </article>
               <!-- End blog entry -->
-              <div class="blog-pagination">
-                <ul class="justify-content-center">
-                  <li
-                    :class="page.active ? 'active' : ''"
-                    v-for="(page, key) in $page.props.blogs.links"
-                    :key="key"
-                  >
-                    <Link
-                      :href="page.url"
-                      v-if="
-                        (key != 0) & (key != $page.props.blogs.links.length - 1)
-                      "
-                      >{{ page.label }}</Link
-                    >
-                  </li>
-                </ul>
-              </div>
+              <div class="blog-pagination"></div>
             </div>
             <!-- End blog entries list -->
 
-            <div class="col-lg-4" data-aos="fade-up-left" data-aos-delay="200">
+            <div class="col-lg-4">
               <div class="sidebar">
                 <h3 class="sidebar-title">Search</h3>
                 <div class="sidebar-item search-form">
@@ -118,7 +90,7 @@
                 <div class="sidebar-item recent-posts">
                   <div
                     class="post-item clearfix"
-                    v-for="(post, key) in $page.props.blogs.data"
+                    v-for="(post, key) in $page.props.recent_blogs"
                     :key="key"
                   >
                     <img
@@ -180,5 +152,8 @@ const formatDate = (date) => {
 };
 </script>
 
-<style>
+<style scoped>
+.blog-content {
+  font-size: 16px;
+}
 </style>

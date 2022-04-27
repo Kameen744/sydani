@@ -6,7 +6,8 @@
         <div class="container">
           <ol>
             <li><Link href="/">Home</Link></li>
-            <li>Blog</li>
+            <li><Link href="/blog">Blog</Link></li>
+            <li>{{ $page.props.blogs.data[0].industry_slug }}</li>
           </ol>
         </div>
       </section>
@@ -14,23 +15,19 @@
 
       <!-- ======= Blog Section ======= -->
       <section id="blog" class="blog">
-        <div class="container">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
           <div class="row">
             <div class="col-lg-8 entries">
               <article
                 class="entry"
                 v-for="(blog, key) in $page.props.blogs.data"
                 :key="key"
-                data-aos="fade-up-left"
-                data-aos-delay="100"
               >
                 <div class="">
                   <img
                     :src="`${$page.props.asset}/assets/img/blogs/${blog.image}`"
                     :alt="blog.slug"
                     class="img-fluid shadow-lg"
-                    data-aos="flip-left"
-                    data-aos-delay="200"
                   />
                   <hr />
                 </div>
@@ -90,7 +87,7 @@
             </div>
             <!-- End blog entries list -->
 
-            <div class="col-lg-4" data-aos="fade-up-left" data-aos-delay="200">
+            <div class="col-lg-4">
               <div class="sidebar">
                 <h3 class="sidebar-title">Search</h3>
                 <div class="sidebar-item search-form">

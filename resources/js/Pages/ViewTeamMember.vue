@@ -43,9 +43,7 @@
 </template>
 
 <script setup>
-import { computed, onMounted } from "vue";
 import { Head } from "@inertiajs/inertia-vue3";
-
 import Header from "./../Layouts/Header.vue";
 import Footer from "./../Layouts/Footer.vue";
 import TopButton from "./../Layouts/TopButton.vue";
@@ -53,11 +51,6 @@ import SubCarousel from "./../Layouts/SubCarousel.vue";
 import Loader from "./../Layouts/Loader.vue";
 import MainTitle from "./../Layouts/MainTitle.vue";
 import Layout from "./../Layouts/Layout.vue";
-
-onMounted(() => {
-  let intro = document.getElementsByName("subpage-intro");
-  console.log(intro);
-});
 </script>
 <style scoped>
 .position {
