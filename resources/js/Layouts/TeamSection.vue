@@ -44,10 +44,11 @@
                   <h3 class="fs-5 border-bottom text-center pb-1">
                     {{ member.name }}
                   </h3>
-                  <p
+                  <Link
+                    :href="`/about/team-member/${member.name}`"
                     class="fs-6 text-white"
                     v-html="member.bio.substring(0, 250) + ' ...'"
-                  ></p>
+                  ></Link>
                   <div class="social d-flex justify-content-evenly">
                     <a href="#"><i class="bi bi-twitter"></i></a>
                     <a href="#"><i class="bi bi-facebook"></i></a>
@@ -66,44 +67,10 @@
 </template>
 
 <script setup>
-const { usePage } = require("@inertiajs/inertia-vue3");
+const { usePage, Link } = require("@inertiajs/inertia-vue3");
 const { computed } = require("@vue/runtime-core");
 
 const asset = computed(() => usePage().props.value.asset);
-const members = [
-  {
-    name: "John Doe",
-    title: "Position",
-    bio: `Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex
-          aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos
-          quisquam cupiditate. Et nemo qui impedit suscipit alias ea.
-          Sit sint consectetur velit.`,
-  },
-  {
-    name: "John Doe",
-    title: "Position",
-    bio: `Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex
-          aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos
-          quisquam cupiditate. Et nemo qui impedit suscipit alias ea.
-          Sit sint consectetur velit.`,
-  },
-  {
-    name: "John Doe",
-    title: "Position",
-    bio: `Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex
-          aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos
-          quisquam cupiditate. Et nemo qui impedit suscipit alias ea.
-          Sit sint consectetur velit.`,
-  },
-  {
-    name: "John Doe",
-    title: "Position",
-    bio: `Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex
-          aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos
-          quisquam cupiditate. Et nemo qui impedit suscipit alias ea.
-          Sit sint consectetur velit.`,
-  },
-];
 </script>
 
 <style scoped>

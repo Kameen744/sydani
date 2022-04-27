@@ -27,6 +27,7 @@ use App\Http\Controllers\Backend\SystemStrengtheningController;
 
 Route::get('/', [PageController::class, 'welcome'])->name('welcome');
 Route::get('/about', [PageController::class, 'about']);
+Route::get('/about/team-member/{name}', [PageController::class, 'view_team_member']);
 Route::get('/contact', [PageController::class, 'contact']);
 Route::get('/career', [PageController::class, 'career']);
 Route::get('/industries/{name}', [PageController::class, 'industries']);

@@ -55,6 +55,12 @@ class PageController extends Controller
         return Inertia::render('About', \compact('whoweare', 'vision', 'teams', 'coreValues'));
     }
 
+    public function view_team_member($name)
+    {
+        $member = OurTeam::where('name', $name)->first();
+        return Inertia::render('ViewTeamMember', \compact('member'));
+    }
+
     public function contact()
     {
         $contact = Contact::latest()->first();
