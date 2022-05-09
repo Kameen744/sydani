@@ -133,7 +133,30 @@
                   </div>
                 </div>
                 <!-- End sidebar recent posts-->
-
+                <!-- Featured Insights-->
+                <h3 class="sidebar-title">Featured Insights</h3>
+                <hr />
+                <div class="sidebar-item recent-posts">
+                  <div
+                    class="post-item clearfix"
+                    v-for="(insight, key) in $page.props.featured_insights"
+                    :key="key"
+                  >
+                    <img
+                      :src="`${$page.props.asset}/assets/img/insights/${insight.image}`"
+                      :alt="insight.title"
+                    />
+                    <h4>
+                      <Link :href="`/blog/read/${insight.image}`">{{
+                        insight.title.substring(0, 50)
+                      }}</Link>
+                    </h4>
+                    <time datetime="2020-01-01">{{
+                      formatDate(insight.created_at)
+                    }}</time>
+                  </div>
+                </div>
+                <!-- End Featured insights-->
                 <h3 class="sidebar-title">Tags</h3>
                 <div class="sidebar-item tags">
                   <ul>

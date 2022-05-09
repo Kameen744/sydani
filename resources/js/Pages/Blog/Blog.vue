@@ -65,7 +65,7 @@
                 <div class="entry-content">
                   <p v-html="blog.content.substring(0, 500) + ' ...'"></p>
                   <div class="read-more">
-                    <Link :href="`/blog/read/${blog.read}`">Read More</Link>
+                    <Link :href="`/blog/read/${blog.slug}`">Read More</Link>
                   </div>
                 </div>
               </article>
@@ -115,6 +115,7 @@
                 </div>
                 <!-- End sidebar categories-->
                 <h3 class="sidebar-title">Recent Posts</h3>
+                <hr />
                 <div class="sidebar-item recent-posts">
                   <div
                     class="post-item clearfix"
@@ -135,8 +136,30 @@
                     }}</time>
                   </div>
                 </div>
-                <!-- End sidebar recent posts-->
-
+                <!-- Featured Insights-->
+                <h3 class="sidebar-title">Featured Insights</h3>
+                <hr />
+                <div class="sidebar-item recent-posts">
+                  <div
+                    class="post-item clearfix"
+                    v-for="(insight, key) in $page.props.featured_insights"
+                    :key="key"
+                  >
+                    <img
+                      :src="`${$page.props.asset}/assets/img/insights/${insight.image}`"
+                      :alt="insight.title"
+                    />
+                    <h4>
+                      <Link :href="`/blog/read/${insight.image}`">{{
+                        insight.title.substring(0, 50)
+                      }}</Link>
+                    </h4>
+                    <time datetime="2020-01-01">{{
+                      formatDate(insight.created_at)
+                    }}</time>
+                  </div>
+                </div>
+                <!-- End Featured insights-->
                 <h3 class="sidebar-title">Tags</h3>
                 <div class="sidebar-item tags">
                   <ul>

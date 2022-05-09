@@ -24,11 +24,11 @@ use App\Http\Controllers\Backend\VisionMissionController;
 use App\Http\Controllers\Backend\DemandGenerationController;
 use App\Http\Controllers\Backend\SystemStrengtheningController;
 
-
 Route::get('/', [PageController::class, 'welcome'])->name('welcome');
 Route::get('/about', [PageController::class, 'about']);
 Route::get('/about/team-member/{name}', [PageController::class, 'view_team_member']);
-Route::get('/contact', [PageController::class, 'contact']);
+Route::get('/contact', [PageController::class, 'contact'])->name('contactus');
+Route::post('/contact', [PageController::class, 'contact_store']);
 Route::get('/career', [PageController::class, 'career']);
 Route::get('/industries/{name}', [PageController::class, 'industries']);
 Route::get('/ourwork',  [PageController::class, 'ourwork']);
@@ -43,7 +43,6 @@ Route::middleware(['auth'])->group(function () {
     Route::prefix('admin')->group(function () {
         // Dashboard index
         Route::get('/dashboard', [AdminController::class, 'dashboard']);
-
         // Carousel routes
         Route::controller(CarouselController::class)->group(function() {
             Route::get('/carousel', 'index')->name('carousel');

@@ -11,17 +11,7 @@ const mix = require('laravel-mix');
  |
  */
 
-//  mix.js('resources/js/app.js', 'public/js')
-//     .vue()
-//     .postCss('resources/css/app.css', 'public/css', [
-//         require('postcss-import'),
-//         require('tailwindcss'),
-//         require('autoprefixer'),
-//     ]).options({
-//         processCssUrls: true,
-//     })
-//     .webpackConfig(require('./webpack.config'));
-
+// Website Resources
 mix.js('resources/js/app.js', 'public/js')
     .vue()
     .postCss('resources/css/app.css', 'public/css').options({
@@ -29,12 +19,29 @@ mix.js('resources/js/app.js', 'public/js')
     })
     .webpackConfig(require('./webpack.config'));
 
+// Dashboard resources
 mix.js('resources/js/dashboard.js', 'public/js')
     .vue()
     .postCss('resources/css/dashboard.css', 'public/css').options({
         processCssUrls: true,
     })
     .webpackConfig(require('./webpack.config'));
+
+// // GIP Resources
+// mix.js('resources/js/gip.js', 'public/js')
+//     .vue()
+//     .postCss('resources/css/gip.css', 'public/css').options({
+//         processCssUrls: true,
+//     })
+//     .webpackConfig(require('./webpack.config'));
+
+// // GIP Dashboard Resources
+// mix.js('resources/js/gip-dashboard.js', 'public/js')
+//     .vue()
+//     .postCss('resources/css/gip-dashboard.css', 'public/css').options({
+//         processCssUrls: true,
+//     })
+//     .webpackConfig(require('./webpack.config'));
 
 if (mix.inProduction()) {
     mix.version();

@@ -21,6 +21,7 @@ use App\Models\DataAnalytics;
 use App\Models\VisionMission;
 use App\Models\NewsLetterList;
 use App\Models\IndustryService;
+use App\Models\ContactUsMessage;
 use App\Models\DemandGeneration;
 use App\Models\SystemStrengthening;
 use Illuminate\Support\Facades\Redirect;
@@ -67,6 +68,19 @@ class PageController extends Controller
         return Inertia::render('Contact', \compact('contact'));
     }
 
+    public function contact_store(Request $request)
+    {
+        $message = $request->validate([
+            'name'      => 'required|string',
+            'email'     => 'required|email',
+            'subject'   => 'required|string',
+            'message'   => 'required|string'
+        ]);
+
+        ContactUsMessage::create($message);
+        return Redirect::route('contactus');
+    }
+
     public function career()
     {
         $vacancies = Vacancy::latest()->take(4)->get();
@@ -109,29 +123,40 @@ class PageController extends Controller
         NewsLetterList::create($data);
         return Redirect::route('welcome');
     }
-
+    // Blog posts
     public function blog_index()
     {
         $blogs = Blog::latest()->paginate(4);
         $industries = Industry::all('name', 'slug');
-        return Inertia::render('Blog/Blog', \compact('blogs', 'industries'));
+        $featured_insights = Insight::latest()->take(4)->get();
+        // dd($featured_insights);
+        return Inertia::render('Blog/Blog', \compact('blogs', 'industries', 'featured_insights'));
     }
-
+    // view a blog
     public function blog_view($slug)
     {
+        $type = 'blog';
         $blog = Blog::where('slug', $slug)->first();
+
+        if(!$blog) {
+            $blog = Insight::where('image', $slug)->first();
+            $type = 'insight';
+        }
+
         $industries = Industry::all('name', 'slug');
         $recent_blogs = Blog::latest()->take(4)->get();
-        return Inertia::render('Blog/ReadBlog', compact('blog', 'industries', 'recent_blogs'));
+        $featured_insights = Insight::latest()->take(4)->get();
+        return Inertia::render('Blog/ReadBlog', compact('blog', 'industries', 'recent_blogs', 'type', 'featured_insights'));
     }
-
+    // blog category
     public function blog_category($industry_slug)
     {
         $blogs = Blog::where('industry_slug', $industry_slug)->latest()->paginate(5);
+        $featured_insights = Insight::latest()->take(4)->get();
 
-        if($blogs[0] == null) {
+        if(!$blogs[0]) {
             return redirect()->back();
         }
-        return Inertia::render('Blog/BlogCategory', compact('blogs'));
+        return Inertia::render('Blog/BlogCategory', compact('blogs', 'featured_insights'));
     }
 }

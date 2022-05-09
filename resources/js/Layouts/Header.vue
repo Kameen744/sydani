@@ -101,21 +101,46 @@
               >Our Work</Link
             >
           </li>
-          <li>
+          <!-- <li>
             <Link
               class="nav-link scrollto"
               href="/projects"
               aria-label="link to Projects page"
               >Projects</Link
             >
-          </li>
-          <li>
+          </li> -->
+          <!-- <li>
             <Link
               class="nav-link scrollto"
               href="/career"
               aria-label="link to Career page"
               >Career</Link
             >
+          </li> -->
+          <li class="dropdown">
+            <a href="/" @click.prevent="navExp" aria-label="Goto Home Page"
+              ><span>Work With Us</span> <i class="bi bi-chevron-down"></i
+            ></a>
+            <ul>
+              <li><a href="#">Why work with us</a></li>
+              <li>
+                <Link
+                  class="nav-link scrollto"
+                  href="/career"
+                  aria-label="link to Career page"
+                  >Career</Link
+                >
+              </li>
+              <li>
+                <a
+                  class="nav-link scrollto"
+                  href="https://gip.test"
+                  aria-label="Link to graduate iternship page"
+                  target="_blank"
+                  >Graduate Internship</a
+                >
+              </li>
+            </ul>
           </li>
           <li>
             <Link
@@ -125,7 +150,7 @@
               >Contact</Link
             >
           </li>
-          <li>
+          <!-- <li>
             <a
               class="nav-link scrollto"
               href="https://gip.test"
@@ -133,7 +158,7 @@
               target="_blank"
               >SGIP</a
             >
-          </li>
+          </li> -->
           <li>
             <Link
               class="nav-link scrollto"
@@ -141,6 +166,21 @@
               aria-label="Link to Blogpost page"
               >Blog</Link
             >
+          </li>
+          <li class="dropdown">
+            <a href="/" @click.prevent="navExp" aria-label="Goto Home Page"
+              ><span>Featured Websites</span> <i class="bi bi-chevron-down"></i
+            ></a>
+            <ul>
+              <li>
+                <a href="https://comeinsure.com/" target="_blank">Comeinsure</a>
+              </li>
+              <li>
+                <a href="https://listen.sydani.org/" target="_blank"
+                  >Social Listening</a
+                >
+              </li>
+            </ul>
           </li>
         </ul>
         <ul v-else>
