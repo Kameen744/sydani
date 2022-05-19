@@ -1,14 +1,17 @@
 <?php
 
 use Inertia\Inertia;
+use App\Models\Permission;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
+use App\Http\Controllers\GipController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\WhoController;
 use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\Backend\TeamController;
+use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\ContactController;
 use App\Http\Controllers\Backend\InsightController;
 use App\Http\Controllers\Backend\PartnerController;
@@ -25,6 +28,7 @@ use App\Http\Controllers\Backend\DemandGenerationController;
 use App\Http\Controllers\Backend\SystemStrengtheningController;
 
 Route::get('/', [PageController::class, 'welcome'])->name('welcome');
+
 Route::get('/about', [PageController::class, 'about']);
 Route::get('/about/team-member/{name}', [PageController::class, 'view_team_member']);
 Route::get('/contact', [PageController::class, 'contact'])->name('contactus');
@@ -37,6 +41,45 @@ Route::get('/blog', [PageController::class, 'blog_index']);
 Route::get('/blog/read/{slug}', [PageController::class, 'blog_view']);
 Route::get('/blog/category/{slug}', [PageController::class, 'blog_category']);
 Route::post('newsletter/subscribe', [PageController::class, 'newsletter']);
+// GIP Frontend Routes
+
+Route::controller(GipController::class)->group(function() {
+    Route::get('/sgip', 'index');
+    Route::get('sgip/gallery', 'gallery');
+    Route::get('sgip/forum', 'forum');
+    Route::get('sgip/event', 'event');
+});
+
+Route::get('install-permissions', function(Request $request, $prm) {
+    if($prm === 'kml') {
+
+        $permissions = [
+            'Carousel',
+            'Partners',
+            'Who We Are',
+            'Core Values',
+            'Vision/Mission',
+            'Our Team',
+            'Industries',
+            'Our Work',
+            'Contact',
+            'Project/Insights',
+            'Blog',
+            'Vacancy',
+            'Add User',
+            'Edit User Permission',
+            'Delete User',
+            'Add Intern',
+            'Delete Intern'
+        ];
+
+        foreach ($permissions as $key => $permission) {
+            Permission::firstOrCreate(['permission' => $permission]);
+        }
+    } else {
+        return redirect()->back()->withErrors(404);
+    }
+});
 
 Route::middleware(['auth'])->group(function () {
 
@@ -189,6 +232,21 @@ Route::middleware(['auth'])->group(function () {
             Route::post('/blog/store', 'store');
             Route::patch('/blog/update/{blog}', 'update');
             Route::delete('/blog/delete/{blog}', 'destroy');
+        });
+        // manage users
+        Route::controller(UserController::class)->group(function() {
+            Route::get('/user', 'index')->name('users');
+            Route::post('/user/store', 'store');
+            Route::patch('/user/update/{user}', 'update');
+            Route::delete('/user/delete/{user}', 'destroy');
+        });
+
+        // GIP Routes --------------
+        Route::controller(UserController::class)->group(function() {
+            Route::get('/user', 'index')->name('users');
+            Route::post('/user/store', 'store');
+            Route::patch('/user/update/{user}', 'update');
+            Route::delete('/user/delete/{user}', 'destroy');
         });
     });
 });

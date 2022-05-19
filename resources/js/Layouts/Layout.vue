@@ -1,6 +1,6 @@
 <template>
   <Head>
-    <link
+    <!-- <link
       rel="stylesheet"
       :href="`${$page.props.asset}/assets/vendor/aos/aos.css`"
     />
@@ -11,7 +11,7 @@
     <link
       rel="stylesheet"
       :href="`${$page.props.asset}/assets/vendor/swiper/swiper-bundle.min.css`"
-    />
+    /> -->
     <link
       v-if="pageLoaded"
       rel="stylesheet"

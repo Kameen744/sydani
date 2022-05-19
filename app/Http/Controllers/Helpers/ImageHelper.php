@@ -56,7 +56,7 @@ class ImageHelper
         } else {
             $path = $dir .$this->get_image_name(title: $title);
             $img = Image::make($image);
-            $img->encode('jpg', 75);
+            $img->encode('webp', 90);
             $img->save($path);
         }
     }
@@ -69,7 +69,7 @@ class ImageHelper
         if(!empty($format)) {
            return Str::slug($title) .'.' .$format;
         }
-        return Str::slug($title) .'.jpg';
+        return Str::slug($title) .'.webp';
     }
 
     // Create public path
@@ -88,6 +88,7 @@ class ImageHelper
     public function delete(String $folder, String $title)
     {
         $dir =  $this->get_image_path(folder: $folder);
+
         $this->check_and_del_file($dir .$this->get_image_name($title));
         $this->check_and_del_file($dir .$this->get_image_name($title .'-sm'));
         $this->check_and_del_file($dir .$this->get_image_name($title. '-md'));

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bs-toast toast toast-placement-ex m-2 fade top-0 end-0"
+    class="bs-toast toast toast-placement-ex m-2 top-0 end-0"
     :class="show ? `show ${type}` : 'hide'"
     role="alert"
     aria-live="assertive"

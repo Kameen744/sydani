@@ -74,7 +74,15 @@
           <!-- Content -->
           <div class="container-xxl flex-grow-1 container-p-y">
             <div class="row">
+              <!-- {{ $page.props.errors.permission_error }} -->
               <slot></slot>
+
+              <Toast
+                title="Permission Error"
+                :subTitle="$page.props.errors.permission_error"
+                type="danger"
+                :show="$page.props.errors.permission_error ? true : false"
+              ></Toast>
             </div>
           </div>
           <!-- / Content -->
@@ -113,6 +121,7 @@ import { Head, usePage, Link } from "@inertiajs/inertia-vue3";
 import { onMounted } from "@vue/runtime-core";
 import Sidebar from "./Sidebar.vue";
 import DashboardHeader from "./DashboardHeader.vue";
+import Toast from "./Toast.vue";
 const logout = () => {
   Inertia.post("/logout");
 };

@@ -95,7 +95,7 @@
               ></Alert>
               <Toast
                 title="Blog"
-                content="Successefully Saved!"
+                subTitle="Successefully Saved!"
                 type="default"
                 :show="blogForm.recentlySuccessful"
               ></Toast>

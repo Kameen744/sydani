@@ -26,7 +26,7 @@
       </a>
     </div>
 
-    <ul class="menu-inner py-1">
+    <ul class="menu-inner py-1 pb-5 mb-5">
       <!-- Dashboard -->
       <li
         class="menu-item"
@@ -56,9 +56,19 @@
       ></SideBarLink>
 
       <li class="menu-header small text-uppercase">
+        <span class="menu-header-text">GIP</span>
+      </li>
+      <SideBarLink
+        :data="link"
+        v-for="(link, key) in GipNavLink"
+        :key="key"
+      ></SideBarLink>
+
+      <li class="menu-header small text-uppercase">
         <span class="menu-header-text">Admin</span>
       </li>
       <SideBarLink
+        class="mb-5"
         :data="link"
         v-for="(link, key) in usersNavLink"
         :key="key"
@@ -71,7 +81,18 @@
 import { Head, usePage, Link } from "@inertiajs/inertia-vue3";
 import { onMounted } from "@vue/runtime-core";
 import SideBarLink from "./SideBarLink.vue";
-onMounted(() => {});
+onMounted(() => {
+  const navElements = document
+    .getElementById("layout-menu")
+    .getElementsByTagName("li");
+
+  for (let i = 0; i < navElements.length; i++) {
+    const link = navElements[i];
+    link.addEventListener("click", (e) => {
+      scrollToElement(link);
+    });
+  }
+});
 
 let toggleMenu = () => {
   const tg = document.querySelector("html");
@@ -166,13 +187,41 @@ const postNavLink = [
   },
 ];
 
+// GIP
+const GipNavLink = [
+  {
+    title: "GIP",
+    activeKey: 6,
+    links: [
+      { link: "Add New Intern", url: "/admin/gip/new" },
+      { link: "Interns", url: "/admin/gip/list" },
+    ],
+  },
+];
+
+// Manage Users and permissions
 const usersNavLink = [
   {
     title: "Manage Users",
-    activeKey: 4,
-    links: [{ link: "Users List", url: "/admin/users" }],
+    activeKey: 5,
+    links: [{ link: "Users List", url: "/admin/user" }],
   },
 ];
+
+const scrollToElement = (pageElement) => {
+  var positionX = 0,
+    positionY = 0;
+  const sectionToScroll = document.getElementById("layout-menu");
+
+  while (pageElement != null) {
+    positionX += pageElement.offsetLeft;
+    positionY += pageElement.offsetTop;
+    pageElement = pageElement.offsetParent;
+    sectionToScroll.scrollTo(positionX, positionY);
+  }
+};
+
+// scrollToElement(pageElement);
 </script>
 <style scoped>
 #layout-menu {

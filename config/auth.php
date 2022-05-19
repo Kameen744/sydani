@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Gip\Intern;
+
 return [
 
     /*
@@ -40,6 +42,10 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'intern' => [
+            'driver' => 'session',
+            'provider' => 'interns',
+        ],
     ],
 
     /*
@@ -63,6 +69,10 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
+        ],
+        'interns' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Intern::class,
         ],
 
         // 'users' => [
@@ -89,6 +99,12 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+        'interns' => [
+            'provider' => 'interns',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,

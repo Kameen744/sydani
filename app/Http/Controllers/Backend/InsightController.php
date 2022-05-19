@@ -49,10 +49,11 @@ class InsightController extends Controller
         );
 
         Insight::create([
-            'title'     => $data['title'],
-            'content'   => $data['content'],
-            'slug'      => Str::slug($data['title']),
-            'image'     => $image_helper->get_image_name($data['title'])
+            'title'         => $data['title'],
+            'content'       => $data['content'],
+            'slug'          => Str::slug($data['title']),
+            'industry_slug' => $data['industry_slug'],
+            'image'         => $image_helper->get_image_name($data['title'])
         ]);
 
         return Redirect::route('insight');

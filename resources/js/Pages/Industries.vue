@@ -16,6 +16,9 @@
     <AboutIndustry></AboutIndustry>
     <SubPageServices></SubPageServices>
     <SubPageInsight></SubPageInsight>
+    <div class="py-5">
+      <ContactSection></ContactSection>
+    </div>
     <Footer></Footer>
     <TopButton></TopButton>
   </div>
@@ -32,5 +35,6 @@ import SubCarousel from "./../Layouts/SubCarousel.vue";
 import AboutIndustry from "./../Layouts/AboutIndustry.vue";
 import SubPageServices from "./../Layouts/SubPageServices.vue";
 import SubPageInsight from "./../Layouts/SubPageInsight.vue";
+import ContactSection from "./../Layouts/ContactSection.vue";
 import Loader from "./../Layouts/Loader.vue";
 </script>

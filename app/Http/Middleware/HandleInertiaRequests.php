@@ -6,6 +6,7 @@ use App\Models\Contact;
 use Inertia\Middleware;
 use App\Models\Industry;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HandleInertiaRequests extends Middleware
 {
@@ -40,12 +41,18 @@ class HandleInertiaRequests extends Middleware
         $dashAsset = asset('dashboard');
         $industries = Industry::all('name', 'slug');
         $contact = Contact::latest()->first();
+        $permissions = null;
 
         $auth = [
             'user' => $request->user(),
         ];
+
+        if ($auth['user']) {
+            $permissions = Auth::user()->permissions();
+        }
+
         return array_merge(parent::share($request), [
-            ...compact('asset', 'auth', 'dashAsset', 'industries', 'contact', 'public')
+            ...compact('asset', 'auth', 'dashAsset', 'industries', 'contact', 'public', 'permissions')
         ]);
     }
 }

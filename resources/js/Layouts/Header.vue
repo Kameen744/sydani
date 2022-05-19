@@ -51,21 +51,23 @@
                 v-for="(industry, key) in $page.props.industries"
                 :key="key"
               >
-                <Link
+                <a
                   class="nav-link scrollto"
                   :href="`industries/${industry.slug}`"
                   aria-label="Link to Industries Page"
+                  target="_blank"
                 >
                   <span>{{ industry.name }}</span>
                   <i class="bi bi-chevron-right"></i>
-                </Link>
+                </a>
                 <ul>
                   <li>
-                    <Link
+                    <a
                       class="nav-link scrollto"
                       :href="`industries/${industry.slug}#services`"
                       aria-label="Link to Industry services page"
-                      >Services</Link
+                      target="_blank"
+                      >Services</a
                     >
                   </li>
                   <li>
@@ -134,7 +136,7 @@
               <li>
                 <a
                   class="nav-link scrollto"
-                  href="https://gip.test"
+                  href="/sgip"
                   aria-label="Link to graduate iternship page"
                   target="_blank"
                   >Graduate Internship</a
@@ -187,7 +189,7 @@
           <li>
             <Link
               class="nav-link scrollto"
-              href="/"
+              :href="`/industries/${$page.props.page}`"
               aria-label="link to Home page"
               >Home</Link
             >
@@ -211,7 +213,7 @@
           <li>
             <Link
               class="nav-link scrollto"
-              href="/contact"
+              :href="`/industries/${$page.props.page}#contact`"
               aria-label="link to Contact Us page"
               >Contact</Link
             >

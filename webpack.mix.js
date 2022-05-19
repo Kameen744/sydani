@@ -28,14 +28,14 @@ mix.js('resources/js/dashboard.js', 'public/js')
     .webpackConfig(require('./webpack.config'));
 
 // // GIP Resources
-// mix.js('resources/js/gip.js', 'public/js')
-//     .vue()
-//     .postCss('resources/css/gip.css', 'public/css').options({
-//         processCssUrls: true,
-//     })
-//     .webpackConfig(require('./webpack.config'));
+mix.js('resources/js/gip.js', 'public/js')
+    .vue()
+    .postCss('resources/css/gip.css', 'public/css').options({
+        processCssUrls: true,
+    })
+    .webpackConfig(require('./webpack.config'));
 
-// // GIP Dashboard Resources
+// GIP Dashboard Resources
 // mix.js('resources/js/gip-dashboard.js', 'public/js')
 //     .vue()
 //     .postCss('resources/css/gip-dashboard.css', 'public/css').options({

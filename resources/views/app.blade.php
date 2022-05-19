@@ -14,6 +14,9 @@
         <title inertia>{{ config('app.name', 'Sydani') }}</title>
 
         {{-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap"> --}}
+        <link rel="stylesheet" href="{{asset('sydani/assets/vendor/aos/aos.css')}}">
+        <link rel="stylesheet" href="{{asset('sydani/assets/vendor/glightbox/css/glightbox.min.css')}}">
+        <link rel="stylesheet" href="{{asset('sydani/assets/vendor/swiper/swiper-bundle.min.css')}}">
 
         @if (Request::is('admin/*') or Request::is('login'))
             <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
@@ -43,12 +46,16 @@
 
             <script src="{{ asset('js/dashboard.js') }}" defer></script>
             <script src="{{asset('dashboard/js/main.js')}}" defer></script>
+        @elseif (Request::is('sgip') or Request::is('sgip/*'))
+            <link rel="stylesheet" href="{{ asset('css/gip.css') }}">
+            <script src="{{ asset('js/gip.js') }}" defer></script>
         @else
             <link rel="stylesheet" href="{{ asset('css/app.css') }}">
             <script src="{{ asset('js/app.js') }}" defer></script>
         @endif
     </head>
     <body class="font-sans antialiased">
+
         @routes
         @inertia
 
