@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('password');
             $table->unsignedBigInteger('batch_category_id');
             $table->text('bio')->nullable();
+            $table->boolean('blocked')->default(false);
             $table->rememberToken();
             $table->timestamps();
         });

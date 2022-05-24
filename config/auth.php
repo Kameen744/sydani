@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\Gip\Intern;
 
 return [
 
@@ -72,7 +71,7 @@ return [
         ],
         'interns' => [
             'driver' => 'eloquent',
-            'model' => App\Models\Intern::class,
+            'model' => App\Models\Gip\Intern::class,
         ],
 
         // 'users' => [

@@ -4,7 +4,7 @@
     <div class="container">
       <div class="section-title" data-aos="fade-up">
         <h2>Alumni</h2>
-        <p>First set 2022</p>
+        <!-- <p>First set 2022</p> -->
       </div>
 
       <div class="row">
@@ -12,17 +12,19 @@
           class="col-xl-3 col-lg-4 col-md-6"
           data-aos="zoom-in"
           data-aos-delay="100"
+          v-for="(intern, key) in $page.props.interns"
+          :key="key"
         >
           <div class="member">
             <img
-              :src="`${$page.props.public}/gip/img/team/team-1.jpg`"
+              :src="`${$page.props.asset}/assets/img/interns/${intern.profile_image.image}`"
               class="img-fluid"
               alt=""
             />
             <div class="member-info">
               <div class="member-info-content">
-                <h4>Walter White</h4>
-                <span>Chief Executive Officer</span>
+                <h4>{{ intern.name }}</h4>
+                <span>{{ intern.batch.batch }}</span>
               </div>
               <div class="social">
                 <a href=""><i class="bi bi-twitter"></i></a>
@@ -34,7 +36,7 @@
           </div>
         </div>
 
-        <div
+        <!-- <div
           class="col-xl-3 col-lg-4 col-md-6"
           data-aos="zoom-in"
           data-aos-delay="200"
@@ -110,7 +112,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </section>

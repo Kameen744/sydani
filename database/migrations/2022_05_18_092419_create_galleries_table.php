@@ -20,6 +20,13 @@ return new class extends Migration
             $table->boolean('profile_image')->default(false);
             $table->timestamps();
         });
+
+        Schema::table('galleries', function (Blueprint $table) {
+            $table->foreign('intern_id')
+                ->references('id')
+                ->on('interns')
+                ->onDelete('cascade');
+        });
     }
 
     /**

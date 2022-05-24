@@ -17,12 +17,12 @@
           <li>
             <Link class="nav-link scrollto" href="/sgip/gallery">Gallery</Link>
           </li>
-          <li>
+          <!-- <li>
             <Link class="nav-link scrollto" href="/sgip/forum">Forum</Link>
           </li>
           <li>
             <Link class="nav-link scrollto" href="/sgip/event">Events</Link>
-          </li>
+          </li> -->
           <li>
             <a
               class="nav-link scrollto"

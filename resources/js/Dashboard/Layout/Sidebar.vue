@@ -86,6 +86,19 @@ onMounted(() => {
     .getElementById("layout-menu")
     .getElementsByTagName("li");
 
+  const scrollToElement = (pageElement) => {
+    var positionX = 0,
+      positionY = 0;
+    const sectionToScroll = document.getElementById("layout-menu");
+
+    while (pageElement != null) {
+      positionX += pageElement.offsetLeft;
+      positionY += pageElement.offsetTop;
+      pageElement = pageElement.offsetParent;
+      sectionToScroll.scrollTo(positionX, positionY);
+    }
+  };
+
   for (let i = 0; i < navElements.length; i++) {
     const link = navElements[i];
     link.addEventListener("click", (e) => {
@@ -193,8 +206,8 @@ const GipNavLink = [
     title: "GIP",
     activeKey: 6,
     links: [
-      { link: "Add New Intern", url: "/admin/gip/new" },
-      { link: "Interns", url: "/admin/gip/list" },
+      { link: "Create Batch", url: "/admin/intern/batch" },
+      { link: "Add New Intern", url: "/admin/intern" },
     ],
   },
 ];
@@ -208,42 +221,31 @@ const usersNavLink = [
   },
 ];
 
-const scrollToElement = (pageElement) => {
-  var positionX = 0,
-    positionY = 0;
-  const sectionToScroll = document.getElementById("layout-menu");
-
-  while (pageElement != null) {
-    positionX += pageElement.offsetLeft;
-    positionY += pageElement.offsetTop;
-    pageElement = pageElement.offsetParent;
-    sectionToScroll.scrollTo(positionX, positionY);
-  }
-};
-
 // scrollToElement(pageElement);
 </script>
+
+
 <style scoped>
 #layout-menu {
+  overflow: auto;
   overflow-x: hidden;
-  overflow-y: auto;
 }
 /* Works on Firefox */
-* {
+#layout-menu {
   scrollbar-width: thin;
   scrollbar-color: orange midnightblue;
 }
 
 /* Works on Chrome, Edge, and Safari */
-*::-webkit-scrollbar {
-  width: 6px;
+#layout-menu::-webkit-scrollbar {
+  width: 8px;
 }
 
-*::-webkit-scrollbar-track {
+#layout-menu::-webkit-scrollbar-track {
   background: midnightblue;
 }
 
-*::-webkit-scrollbar-thumb {
+#layout-menu::-webkit-scrollbar-thumb {
   background-color: orange;
   border-radius: 10px;
   border: 1px solid midnightblue;
