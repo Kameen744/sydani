@@ -14,6 +14,7 @@ class NewInternMail extends Mailable
 
     public $intern;
     public $password;
+    public $subject = 'Sydani Graduate Internship Program';
     /**
      * Create a new message instance.
      *

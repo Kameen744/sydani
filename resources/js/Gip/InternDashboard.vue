@@ -7,7 +7,8 @@
       <div class="container-xl px-4 mt-4">
         <nav class="nav nav-borders">
           <a class="nav-link active" href="#">Profile</a>
-          <a class="nav-link" href="#">Messages</a>
+          <Link class="nav-link" href="/sgip/upload-image">Upload Images</Link>
+          <a class="nav-link" href="#">Forum</a>
           <a class="nav-link" href="#">Security</a>
         </nav>
         <hr class="mt-0 mb-4" />
@@ -15,10 +16,11 @@
           <div class="col-md-7 col-lg-4 mb-5 mb-lg-0 wow fadeIn">
             <div class="card border-0 shadow">
               <img
-                :src="`${$page.props.asset}/assets/img/interns/${$page.props.intern.profile_image.image}`"
+                :src="`${$page.props.asset}/assets/img/interns/kameen-kama-1.webp`"
                 alt="..."
                 class="img-fluid"
               />
+              <!-- `${$page.props.asset}/assets/img/interns/${$page.props.intern.profile_image.image}` -->
               <div class="card-body p-1-9 p-xl-5">
                 <div class="mb-4">
                   <h3 class="h4 mb-0">{{ $page.props.intern.name }}</h3>
@@ -35,15 +37,15 @@
                       >{{ $page.props.intern.email }}</a
                     >
                   </li>
-                  <li class="mb-3">
+                  <!-- <li class="mb-3">
                     <a href="#!"
                       ><i
                         class="fas fa-mobile-alt display-25 me-3 text-secondary"
                       ></i
                       >+012 (345) 6789</a
                     >
-                  </li>
-                  <li>
+                  </li> -->
+                  <!-- <li>
                     <a href="#!"
                       ><i
                         class="
@@ -56,7 +58,7 @@
                       ></i
                       >205 Main Street, USA</a
                     >
-                  </li>
+                  </li> -->
                 </ul>
                 <ul class="social-icon-style2 ps-0">
                   <li>
@@ -90,26 +92,19 @@
                   <h2 class="h1 mb-0 text-primary">#About Me</h2>
                 </div>
                 <p>
-                  It is a long established fact that a reader will be distracted
-                  by the readable content of a page when looking at its layout.
-                  The point of using Lorem Ipsum is that it has a more-or-less
-                  normal distribution of letters, as opposed to using 'Content
-                  here, content here', making it look like readable English.
-                  Many desktop publishing packages and web page editors now use
-                  Lorem Ipsum as their default model text, and a search for
-                  'lorem ipsum' will uncover many web sites still in their
-                  infancy.
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet
+                  adipisci fugiat similique nam aut inventore magnam architecto
+                  soluta vitae iste placeat modi error, aspernatur fuga,
+                  consectetur minima officiis eveniet dicta.
                 </p>
                 <p class="mb-0">
-                  There are many variations of passages of Lorem Ipsum
-                  available, but the majority have suffered alteration in some
-                  form, by injected humour, or randomised words which don't look
-                  even slightly believable. If you are going to use a passage of
-                  Lorem Ipsum, you need to be sure there isn't anything
-                  embarrassing hidden in the middle of text.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Laborum dolore similique aspernatur nobis, cumque minus nisi
+                  odio eveniet veniam ad labore, debitis accusantium commodi
+                  sunt illum vitae adipisci minima porro.
                 </p>
               </div>
-              <div class="mb-5 wow fadeIn">
+              <!-- <div class="mb-5 wow fadeIn">
                 <div class="text-start mb-1-6 wow fadeIn">
                   <h2 class="mb-0 text-primary">#Education</h2>
                 </div>
@@ -156,8 +151,8 @@
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="wow fadeIn">
+              </div> -->
+              <!-- <div class="wow fadeIn">
                 <div class="text-start mb-1-6 wow fadeIn">
                   <h2 class="mb-0 text-primary">#Skills &amp; Experience</h2>
                 </div>
@@ -230,7 +225,7 @@
                     ></div>
                   </div>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -241,7 +236,7 @@
 
 <script setup>
 import { computed, onMounted } from "vue";
-import { Head } from "@inertiajs/inertia-vue3";
+import { Head, Link } from "@inertiajs/inertia-vue3";
 import Header from "./Header.vue";
 import GipLayout from "./GipLayout.vue";
 // import HeroSection from "./HeroSection.vue";

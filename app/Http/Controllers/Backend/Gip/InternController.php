@@ -73,7 +73,7 @@ class InternController extends Controller
                 'profile_image' => true
             ]);
 
-            // Mail::to($intern)->send(new NewInternMail($intern, $password));
+            Mail::to($intern)->send(new NewInternMail($intern, $password));
         });
 
         //  Add image on the gallery

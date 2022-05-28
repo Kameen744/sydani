@@ -208,6 +208,7 @@ const GipNavLink = [
     links: [
       { link: "Create Batch", url: "/admin/intern/batch" },
       { link: "Add New Intern", url: "/admin/intern" },
+      { link: "Upload Images", url: "/admin/intern/upload-images" },
     ],
   },
 ];

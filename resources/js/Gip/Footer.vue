@@ -5,10 +5,7 @@
         <div class="row justify-content-center">
           <div class="col-lg-6">
             <h4>Join Our Newsletter</h4>
-            <p>
-              Tamen quem nulla quae legam multos aute sint culpa legam noster
-              magna
-            </p>
+            <p>Kindly provide your email to join our newsletter</p>
             <form action="" method="post">
               <input type="email" name="email" /><input
                 type="submit"
@@ -30,7 +27,7 @@
               Jabi, Abuja<br />
               Nigeria <br /><br />
 
-              <strong>Email:</strong> sgip@sydani.org<br />
+              <strong>Email:</strong> gipcoreteam@sydani.org<br />
             </p>
           </div>
 
@@ -62,10 +59,10 @@
 
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Social Networks</h4>
-            <p>
+            <!-- <p>
               Cras fermentum odio eu feugiat lide par naso tierra videa magna
               derita valies
-            </p>
+            </p> -->
             <div class="social-links mt-3">
               <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
               <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>

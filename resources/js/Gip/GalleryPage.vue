@@ -8,7 +8,7 @@
       <div class="container" data-aos="fade-up">
         <div class="section-title mt-2">
           <h2>Gallery</h2>
-          <p>##</p>
+          <!-- <p>##</p> -->
         </div>
 
         <div class="row" data-aos="fade-up" data-aos-delay="100">
@@ -52,7 +52,7 @@
                     :href="`${$page.props.asset}/assets/img/interns/${intern.profile_image.image}`"
                     data-gallery="portfolioGallery"
                     class="portfolio-lightbox"
-                    title="App 1"
+                    :title="intern.name"
                     ><i class="bi bi-plus"></i
                   ></a>
                   <a href="#" title="More Details"

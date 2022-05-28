@@ -1,6 +1,7 @@
 <?php
 
 use Inertia\Inertia;
+use App\Models\Gip\Intern;
 use App\Models\Permission;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -27,9 +28,9 @@ use App\Http\Controllers\Backend\DataAnalyticsController;
 use App\Http\Controllers\Backend\VisionMissionController;
 use App\Http\Controllers\Backend\Gip\InternBatchController;
 use App\Http\Controllers\Backend\Gip\InternLoginController;
+use App\Http\Controllers\Backend\Gip\UploadImagesContrller;
 use App\Http\Controllers\Backend\DemandGenerationController;
 use App\Http\Controllers\Backend\SystemStrengtheningController;
-use App\Models\Gip\Intern;
 
 Route::get('/', [PageController::class, 'welcome'])->name('welcome');
 
@@ -254,6 +255,13 @@ Route::middleware(['auth'])->group(function () {
             Route::patch('/intern/batch/update/{batch}', 'update');
             Route::delete('/intern/batch/delete/{batch}', 'destroy');
         });
+        // Upload images controller
+        Route::controller(UploadImagesContrller::class)->group(function () {
+            Route::get('/intern/upload-images', 'index')->name('upload.images');
+            Route::post('/intern/upload-images', 'store');
+            Route::patch('/intern/upload-images/{image}', 'update');
+            Route::delete('/intern/upload-images/{image}', 'destroy');
+        });
     });
 });
 
@@ -263,6 +271,13 @@ Route::prefix('sgip')->group(function () {
     Route::middleware(['auth:intern'])->group(function () {
         Route::get('/dashboard', [GipController::class, 'intern_dashboard'])
             ->name('intern.dashboard');
+
+        Route::controller(UploadImagesContrller::class)->group(function () {
+            Route::get('/upload-image', 'index')->name('sgip.upload.image');
+            Route::post('/upload-image', 'store');
+            Route::patch('/upload-image/{image}', 'update');
+            Route::delete('/upload-image/{image}', 'destroy');
+        });
     });
 
     Route::controller(GipController::class)->group(function () {
