@@ -56,6 +56,11 @@ class PageController extends Controller
         return Inertia::render('About', \compact('whoweare', 'vision', 'teams', 'coreValues'));
     }
 
+    public function gallery()
+    {
+        return Inertia::render('Gallery');
+    }
+
     public function view_team_member($name)
     {
         $member = OurTeam::where('name', $name)->first();
