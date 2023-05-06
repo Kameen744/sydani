@@ -35,6 +35,7 @@ use App\Http\Controllers\Backend\SystemStrengtheningController;
 Route::get('/', [PageController::class, 'welcome'])->name('welcome');
 
 Route::get('/about', [PageController::class, 'about']);
+Route::get('/gallery', [PageController::class, 'gallery']);
 Route::get('/about/team-member/{name}', [PageController::class, 'view_team_member']);
 Route::get('/contact', [PageController::class, 'contact'])->name('contactus');
 Route::post('/contact', [PageController::class, 'contact_store']);
@@ -69,6 +70,7 @@ Route::get('install-permissions', function (Request $request, $prm) {
             'Delete User',
             'Add Intern',
             'Delete Intern',
+            'Photo Gallery',
         ];
 
         foreach ($permissions as $key => $permission) {
