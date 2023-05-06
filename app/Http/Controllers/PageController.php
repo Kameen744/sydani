@@ -58,7 +58,8 @@ class PageController extends Controller
 
     public function gallery()
     {
-        return Inertia::render('Gallery');
+        $teams = OurTeam::take(3)->get();
+        return Inertia::render('Gallery',  \compact('teams'));
     }
 
     public function view_team_member($name)
